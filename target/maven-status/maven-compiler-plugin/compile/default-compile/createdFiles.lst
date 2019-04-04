@@ -95,6 +95,7 @@ org\dominic\example\bed\BedGrpc$BedFutureStub.class
 org\dominic\example\recommender\MovieRecommenderGrpc$MethodHandlers.class
 io\grpc\examples\strings\RedactRequest$Builder.class
 io\grpc\examples\strings\StringRequest.class
+ipad\IPadClient$1.class
 org\dominic\example\recommender\RecommendationsOrBuilder.class
 serviceui\ServiceUI.class
 org\camelia\example\ipad\IPadServiceGrpc$MethodHandlers.class

@@ -36,7 +36,7 @@ public class IPadServer {
                 .addService(new IPadServer.IPadImpl())
                 .build()
                 .start();
-        logger.info("Server started, listening on " + port);
+        logger.info("Server started, listening on port:" + port);
         JmDNSRegistrationHelper helper = new JmDNSRegistrationHelper("Camelia", "_ipad._udp.local.", "", port);
 
         Runtime.getRuntime().addShutdownHook(new Thread() {
