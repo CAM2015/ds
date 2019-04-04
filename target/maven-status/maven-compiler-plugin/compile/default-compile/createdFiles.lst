@@ -81,6 +81,7 @@ io\grpc\examples\strings\StringsServiceGrpc$StringsServiceBaseDescriptorSupplier
 ipad\IPadClient.class
 org\dominic\example\bed\BedStatusOrBuilder.class
 io\grpc\examples\strings\StringResponse.class
+ipad\IPadServer$1.class
 org\jpdna\grpchello\HelloResponse$Builder.class
 io\grpc\examples\strings\StringsServiceGrpc$StringsServiceStub.class
 io\grpc\examples\strings\StringsServiceGrpc.class
@@ -110,6 +111,7 @@ io\grpc\examples\strings\StringsServiceGrpc$StringsServiceFileDescriptorSupplier
 org\dominic\example\bed\BedStatus.class
 serviceui\Printer.class
 org\dominic\example\recommender\MovieRecommenderGrpc.class
+ipad\IPadServer$IPadImpl.class
 org\dominic\example\recommender\MovieRecommenderGrpc$MovieRecommenderBaseDescriptorSupplier.class
 io\grpc\examples\strings\StringsServiceGrpc$StringsServiceMethodDescriptorSupplier.class
 org\dominic\example\bed\BedStatus$Builder.class
