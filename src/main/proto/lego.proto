@@ -1,0 +1,48 @@
+
+syntax = "proto3";
+
+package lego;
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "org.camelia.example.lego";
+option java_outer_classname = "LegoProto";
+
+// The greeting service definition.
+service LegoService {
+
+   rpc buildLego (LegoSet) returns (ConstructedLegoToy) {}
+
+   rpc legoPiece (stream LegoPieceRequest) returns (stream LegoPieceResponse) {}
+
+}
+ 
+message LegoSet {
+    string name = 1;
+    string description = 2;
+    int64 pieces = 3;
+    map<string, int64> building_instructions = 4;
+}
+
+message ConstructedLegoToy {
+    bool completed = 1;
+}
+
+enum ProductLine {
+    LEGO_CITY = 0;
+    LEGO_STAR_WARS = 1;
+    LEGO_CLASSIC = 2; 
+}
+
+message LegoPieceRequest {
+    string color = 1;
+    string  material = 2;
+    repeated string shape = 3;
+    map<string, string> brick = 4; 
+}
+
+message LegoPieceResponse {
+    ProductLine product_line = 1;
+    string belongs_to = 2; 
+}
