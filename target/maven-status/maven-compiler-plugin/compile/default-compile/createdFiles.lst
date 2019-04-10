@@ -76,6 +76,7 @@ io\grpc\examples\strings\StringRequest$1.class
 org\dominic\example\recommender\MovieRecommenderGrpc$MovieRecommenderImplBase.class
 org\jpdna\grpchello\GreeterGrpc$GreeterFileDescriptorSupplier.class
 org\camelia\example\lego\LegoServiceGrpc$1.class
+lego\LegoServer$1.class
 org\dominic\example\recommender\MovieRecommenderGrpc$1.class
 org\jpdna\grpchello\GreeterGrpc.class
 org\camelia\example\ipad\IPadServiceGrpc$IPadServiceStub.class
@@ -166,6 +167,7 @@ org\jpdna\grpchello\HelloResponse$1.class
 org\camelia\example\ipad\IPadServiceGrpc$IPadServiceFileDescriptorSupplier.class
 org\jpdna\grpchello\HelloRequestOrBuilder.class
 org\dominic\example\bed\BedGrpc$BedMethodDescriptorSupplier.class
+lego\LegoServer$LegoServiceImpl.class
 org\jpdna\grpchello\HelloResponseOrBuilder.class
 client\ServiceDescription.class
 org\camelia\example\ipad\ArtistId$Builder.class
