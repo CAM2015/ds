@@ -28,41 +28,41 @@ public interface LegoSetOrBuilder extends
       getDescriptionBytes();
 
   /**
-   * <code>int64 pieces = 3;</code>
+   * <code>int64 bricks = 3;</code>
    */
-  long getPieces();
+  long getBricks();
 
   /**
-   * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+   * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
    */
-  int getBuildingInstructionsCount();
+  int getNumberOfBricksPerSetCount();
   /**
-   * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+   * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
    */
-  boolean containsBuildingInstructions(
+  boolean containsNumberOfBricksPerSet(
       java.lang.String key);
   /**
-   * Use {@link #getBuildingInstructionsMap()} instead.
+   * Use {@link #getNumberOfBricksPerSetMap()} instead.
    */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.Long>
-  getBuildingInstructions();
+  java.util.Map<java.lang.String, java.lang.Integer>
+  getNumberOfBricksPerSet();
   /**
-   * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+   * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
    */
-  java.util.Map<java.lang.String, java.lang.Long>
-  getBuildingInstructionsMap();
+  java.util.Map<java.lang.String, java.lang.Integer>
+  getNumberOfBricksPerSetMap();
   /**
-   * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+   * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
    */
 
-  long getBuildingInstructionsOrDefault(
+  int getNumberOfBricksPerSetOrDefault(
       java.lang.String key,
-      long defaultValue);
+      int defaultValue);
   /**
-   * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+   * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
    */
 
-  long getBuildingInstructionsOrThrow(
+  int getNumberOfBricksPerSetOrThrow(
       java.lang.String key);
 }

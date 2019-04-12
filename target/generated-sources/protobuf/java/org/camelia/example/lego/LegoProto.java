@@ -20,10 +20,10 @@ public final class LegoProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_lego_LegoSet_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_lego_LegoSet_BuildingInstructionsEntry_descriptor;
+    internal_static_lego_LegoSet_NumberOfBricksPerSetEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_lego_LegoSet_BuildingInstructionsEntry_fieldAccessorTable;
+      internal_static_lego_LegoSet_NumberOfBricksPerSetEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_lego_ConstructedLegoToy_descriptor;
   static final 
@@ -54,25 +54,25 @@ public final class LegoProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\nlego.proto\022\004lego\032\033google/protobuf/empt" +
-      "y.proto\"\301\001\n\007LegoSet\022\014\n\004name\030\001 \001(\t\022\023\n\013des" +
-      "cription\030\002 \001(\t\022\016\n\006pieces\030\003 \001(\003\022F\n\025buildi" +
-      "ng_instructions\030\004 \003(\0132\'.lego.LegoSet.Bui" +
-      "ldingInstructionsEntry\032;\n\031BuildingInstru" +
-      "ctionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:" +
-      "\0028\001\"\'\n\022ConstructedLegoToy\022\021\n\tcompleted\030\001" +
-      " \001(\010\"\242\001\n\020LegoPieceRequest\022\r\n\005color\030\001 \001(\t" +
-      "\022\020\n\010material\030\002 \001(\t\022\r\n\005shape\030\003 \003(\t\0220\n\005bri" +
-      "ck\030\004 \003(\0132!.lego.LegoPieceRequest.BrickEn" +
-      "try\032,\n\nBrickEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
-      "\002 \001(\t:\0028\001\"P\n\021LegoPieceResponse\022\'\n\014produc" +
-      "t_line\030\001 \001(\0162\021.lego.ProductLine\022\022\n\nbelon" +
-      "gs_to\030\002 \001(\t*B\n\013ProductLine\022\r\n\tLEGO_CITY\020" +
-      "\000\022\022\n\016LEGO_STAR_WARS\020\001\022\020\n\014LEGO_CLASSIC\020\0022" +
-      "\211\001\n\013LegoService\0226\n\tbuildLego\022\r.lego.Lego" +
-      "Set\032\030.lego.ConstructedLegoToy\"\000\022B\n\tlegoP" +
-      "iece\022\026.lego.LegoPieceRequest\032\027.lego.Lego" +
-      "PieceResponse\"\000(\0010\001B\'\n\030org.camelia.examp" +
-      "le.legoB\tLegoProtoP\001b\006proto3"
+      "y.proto\"\304\001\n\007LegoSet\022\014\n\004name\030\001 \001(\t\022\023\n\013des" +
+      "cription\030\002 \001(\t\022\016\n\006bricks\030\003 \001(\003\022I\n\030number" +
+      "_of_bricks_per_set\030\004 \003(\0132\'.lego.LegoSet." +
+      "NumberOfBricksPerSetEntry\032;\n\031NumberOfBri" +
+      "cksPerSetEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
+      "(\005:\0028\001\"\'\n\022ConstructedLegoToy\022\021\n\tcomplete" +
+      "d\030\001 \001(\010\"\242\001\n\020LegoPieceRequest\022\r\n\005color\030\001 " +
+      "\001(\t\022\020\n\010material\030\002 \001(\t\022\r\n\005shape\030\003 \003(\t\0220\n\005" +
+      "brick\030\004 \003(\0132!.lego.LegoPieceRequest.Bric" +
+      "kEntry\032,\n\nBrickEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
+      "ue\030\002 \001(\t:\0028\001\"P\n\021LegoPieceResponse\022\'\n\014pro" +
+      "duct_line\030\001 \001(\0162\021.lego.ProductLine\022\022\n\nbe" +
+      "longs_to\030\002 \001(\t*B\n\013ProductLine\022\r\n\tLEGO_CI" +
+      "TY\020\000\022\022\n\016LEGO_STAR_WARS\020\001\022\020\n\014LEGO_CLASSIC" +
+      "\020\0022\211\001\n\013LegoService\0226\n\tbuildLego\022\r.lego.L" +
+      "egoSet\032\030.lego.ConstructedLegoToy\"\000\022B\n\tle" +
+      "goPiece\022\026.lego.LegoPieceRequest\032\027.lego.L" +
+      "egoPieceResponse\"\000(\0010\001B\'\n\030org.camelia.ex" +
+      "ample.legoB\tLegoProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -92,12 +92,12 @@ public final class LegoProto {
     internal_static_lego_LegoSet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_lego_LegoSet_descriptor,
-        new java.lang.String[] { "Name", "Description", "Pieces", "BuildingInstructions", });
-    internal_static_lego_LegoSet_BuildingInstructionsEntry_descriptor =
+        new java.lang.String[] { "Name", "Description", "Bricks", "NumberOfBricksPerSet", });
+    internal_static_lego_LegoSet_NumberOfBricksPerSetEntry_descriptor =
       internal_static_lego_LegoSet_descriptor.getNestedTypes().get(0);
-    internal_static_lego_LegoSet_BuildingInstructionsEntry_fieldAccessorTable = new
+    internal_static_lego_LegoSet_NumberOfBricksPerSetEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_lego_LegoSet_BuildingInstructionsEntry_descriptor,
+        internal_static_lego_LegoSet_NumberOfBricksPerSetEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_lego_ConstructedLegoToy_descriptor =
       getDescriptor().getMessageTypes().get(1);

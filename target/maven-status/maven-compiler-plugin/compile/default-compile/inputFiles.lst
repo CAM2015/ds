@@ -1,5 +1,6 @@
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\src\main\java\client\ServiceObserver.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\src\main\java\org\jpdna\grpchello\HelloWorldServer.java
+E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\games\GamesProto.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\lego\LegoPieceResponse.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\lego\LegoProto.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\src\main\java\client\ServiceDescription.java
@@ -25,6 +26,7 @@ E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\lego\LegoPieceRequest.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\lego\LegoPieceRequestOrBuilder.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\grpc-java\io\grpc\examples\strings\StringsServiceGrpc.java
+E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\grpc-java\org\camelia\example\games\GamesServiceGrpc.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\io\grpc\examples\strings\LengthResponseOrBuilder.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\io\grpc\examples\strings\RedactRequestOrBuilder.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\lego\ProductLine.java

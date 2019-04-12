@@ -41,7 +41,7 @@ public class IPadClient implements ServiceObserver{
     private IPadServiceGrpc.IPadServiceStub asyncStub;
     private final String interestedService;
     
-    public IPadClient(String hots, int port) {
+    public IPadClient(String host, int port) {
         interestedService = "_ipad._udp.local.";
 
         jmDNSServiceTracker clientManager = jmDNSServiceTracker.getInstance();
@@ -120,7 +120,7 @@ public class IPadClient implements ServiceObserver{
 
     @Override
     public void serviceAdded(ServiceDescription service) {
-          channel = ManagedChannelBuilder.forAddress(service.getAddress(), service.getPort())
+        channel = ManagedChannelBuilder.forAddress(service.getAddress(), service.getPort())
                 .usePlaintext(true)
                 .build();
         blockingStub = IPadServiceGrpc.newBlockingStub(channel);

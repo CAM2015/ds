@@ -105,7 +105,7 @@ public class IPadServer {
 		
         public List<Song> pinkSongs(ArtistId request) {
             Artist artist = Artist.newBuilder().setId(request.getId()).setName("Pink").build();
-            songs = new ArrayList<Song>();
+            songs = new ArrayList<>();
             songs.add(Song.newBuilder().setId(1).setName("Stupid Girls").setArtist(artist).build());
             songs.add(Song.newBuilder().setId(2).setName("Try").setArtist(artist).build());
             songs.add(Song.newBuilder().setId(3).setName("So What").setArtist(artist).build());

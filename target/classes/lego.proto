@@ -9,7 +9,7 @@ option java_multiple_files = true;
 option java_package = "org.camelia.example.lego";
 option java_outer_classname = "LegoProto";
 
-// The greeting service definition.
+// The service definition.
 service LegoService {
 
    rpc buildLego (LegoSet) returns (ConstructedLegoToy) {}
@@ -21,8 +21,8 @@ service LegoService {
 message LegoSet {
     string name = 1;
     string description = 2;
-    int64 pieces = 3;
-    map<string, int64> building_instructions = 4;
+    int64 bricks = 3;
+    map<string, int32> number_of_bricks_per_set = 4;
 }
 
 message ConstructedLegoToy {

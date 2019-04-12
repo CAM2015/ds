@@ -17,7 +17,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- * The greeting service definition.
+ * The service definition.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -119,7 +119,7 @@ public final class LegoServiceGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The service definition.
    * </pre>
    */
   public static abstract class LegoServiceImplBase implements io.grpc.BindableService {
@@ -160,7 +160,7 @@ public final class LegoServiceGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The service definition.
    * </pre>
    */
   public static final class LegoServiceStub extends io.grpc.stub.AbstractStub<LegoServiceStub> {
@@ -198,7 +198,7 @@ public final class LegoServiceGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The service definition.
    * </pre>
    */
   public static final class LegoServiceBlockingStub extends io.grpc.stub.AbstractStub<LegoServiceBlockingStub> {
@@ -227,7 +227,7 @@ public final class LegoServiceGrpc {
 
   /**
    * <pre>
-   * The greeting service definition.
+   * The service definition.
    * </pre>
    */
   public static final class LegoServiceFutureStub extends io.grpc.stub.AbstractStub<LegoServiceFutureStub> {

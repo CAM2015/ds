@@ -18,7 +18,7 @@ private static final long serialVersionUID = 0L;
   private LegoSet() {
     name_ = "";
     description_ = "";
-    pieces_ = 0L;
+    bricks_ = 0L;
   }
 
   @java.lang.Override
@@ -59,20 +59,20 @@ private static final long serialVersionUID = 0L;
           }
           case 24: {
 
-            pieces_ = input.readInt64();
+            bricks_ = input.readInt64();
             break;
           }
           case 34: {
             if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              buildingInstructions_ = com.google.protobuf.MapField.newMapField(
-                  BuildingInstructionsDefaultEntryHolder.defaultEntry);
+              numberOfBricksPerSet_ = com.google.protobuf.MapField.newMapField(
+                  NumberOfBricksPerSetDefaultEntryHolder.defaultEntry);
               mutable_bitField0_ |= 0x00000008;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
-            buildingInstructions__ = input.readMessage(
-                BuildingInstructionsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            buildingInstructions_.getMutableMap().put(
-                buildingInstructions__.getKey(), buildingInstructions__.getValue());
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+            numberOfBricksPerSet__ = input.readMessage(
+                NumberOfBricksPerSetDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            numberOfBricksPerSet_.getMutableMap().put(
+                numberOfBricksPerSet__.getKey(), numberOfBricksPerSet__.getValue());
             break;
           }
           default: {
@@ -105,7 +105,7 @@ private static final long serialVersionUID = 0L;
       int number) {
     switch (number) {
       case 4:
-        return internalGetBuildingInstructions();
+        return internalGetNumberOfBricksPerSet();
       default:
         throw new RuntimeException(
             "Invalid map field number: " + number);
@@ -188,85 +188,85 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PIECES_FIELD_NUMBER = 3;
-  private long pieces_;
+  public static final int BRICKS_FIELD_NUMBER = 3;
+  private long bricks_;
   /**
-   * <code>int64 pieces = 3;</code>
+   * <code>int64 bricks = 3;</code>
    */
-  public long getPieces() {
-    return pieces_;
+  public long getBricks() {
+    return bricks_;
   }
 
-  public static final int BUILDING_INSTRUCTIONS_FIELD_NUMBER = 4;
-  private static final class BuildingInstructionsDefaultEntryHolder {
+  public static final int NUMBER_OF_BRICKS_PER_SET_FIELD_NUMBER = 4;
+  private static final class NumberOfBricksPerSetDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.Long> defaultEntry =
+        java.lang.String, java.lang.Integer> defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.Long>newDefaultInstance(
-                org.camelia.example.lego.LegoProto.internal_static_lego_LegoSet_BuildingInstructionsEntry_descriptor, 
+            .<java.lang.String, java.lang.Integer>newDefaultInstance(
+                org.camelia.example.lego.LegoProto.internal_static_lego_LegoSet_NumberOfBricksPerSetEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
-                com.google.protobuf.WireFormat.FieldType.INT64,
-                0L);
+                com.google.protobuf.WireFormat.FieldType.INT32,
+                0);
   }
   private com.google.protobuf.MapField<
-      java.lang.String, java.lang.Long> buildingInstructions_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
-  internalGetBuildingInstructions() {
-    if (buildingInstructions_ == null) {
+      java.lang.String, java.lang.Integer> numberOfBricksPerSet_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+  internalGetNumberOfBricksPerSet() {
+    if (numberOfBricksPerSet_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
-          BuildingInstructionsDefaultEntryHolder.defaultEntry);
+          NumberOfBricksPerSetDefaultEntryHolder.defaultEntry);
     }
-    return buildingInstructions_;
+    return numberOfBricksPerSet_;
   }
 
-  public int getBuildingInstructionsCount() {
-    return internalGetBuildingInstructions().getMap().size();
+  public int getNumberOfBricksPerSetCount() {
+    return internalGetNumberOfBricksPerSet().getMap().size();
   }
   /**
-   * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+   * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
    */
 
-  public boolean containsBuildingInstructions(
+  public boolean containsNumberOfBricksPerSet(
       java.lang.String key) {
     if (key == null) { throw new java.lang.NullPointerException(); }
-    return internalGetBuildingInstructions().getMap().containsKey(key);
+    return internalGetNumberOfBricksPerSet().getMap().containsKey(key);
   }
   /**
-   * Use {@link #getBuildingInstructionsMap()} instead.
+   * Use {@link #getNumberOfBricksPerSetMap()} instead.
    */
   @java.lang.Deprecated
-  public java.util.Map<java.lang.String, java.lang.Long> getBuildingInstructions() {
-    return getBuildingInstructionsMap();
+  public java.util.Map<java.lang.String, java.lang.Integer> getNumberOfBricksPerSet() {
+    return getNumberOfBricksPerSetMap();
   }
   /**
-   * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+   * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
    */
 
-  public java.util.Map<java.lang.String, java.lang.Long> getBuildingInstructionsMap() {
-    return internalGetBuildingInstructions().getMap();
+  public java.util.Map<java.lang.String, java.lang.Integer> getNumberOfBricksPerSetMap() {
+    return internalGetNumberOfBricksPerSet().getMap();
   }
   /**
-   * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+   * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
    */
 
-  public long getBuildingInstructionsOrDefault(
+  public int getNumberOfBricksPerSetOrDefault(
       java.lang.String key,
-      long defaultValue) {
+      int defaultValue) {
     if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.Long> map =
-        internalGetBuildingInstructions().getMap();
+    java.util.Map<java.lang.String, java.lang.Integer> map =
+        internalGetNumberOfBricksPerSet().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+   * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
    */
 
-  public long getBuildingInstructionsOrThrow(
+  public int getNumberOfBricksPerSetOrThrow(
       java.lang.String key) {
     if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.Long> map =
-        internalGetBuildingInstructions().getMap();
+    java.util.Map<java.lang.String, java.lang.Integer> map =
+        internalGetNumberOfBricksPerSet().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -293,14 +293,14 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
     }
-    if (pieces_ != 0L) {
-      output.writeInt64(3, pieces_);
+    if (bricks_ != 0L) {
+      output.writeInt64(3, bricks_);
     }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
-        internalGetBuildingInstructions(),
-        BuildingInstructionsDefaultEntryHolder.defaultEntry,
+        internalGetNumberOfBricksPerSet(),
+        NumberOfBricksPerSetDefaultEntryHolder.defaultEntry,
         4);
     unknownFields.writeTo(output);
   }
@@ -317,19 +317,19 @@ private static final long serialVersionUID = 0L;
     if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
     }
-    if (pieces_ != 0L) {
+    if (bricks_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(3, pieces_);
+        .computeInt64Size(3, bricks_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.Long> entry
-         : internalGetBuildingInstructions().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.Long>
-      buildingInstructions__ = BuildingInstructionsDefaultEntryHolder.defaultEntry.newBuilderForType()
+    for (java.util.Map.Entry<java.lang.String, java.lang.Integer> entry
+         : internalGetNumberOfBricksPerSet().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.Integer>
+      numberOfBricksPerSet__ = NumberOfBricksPerSetDefaultEntryHolder.defaultEntry.newBuilderForType()
           .setKey(entry.getKey())
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, buildingInstructions__);
+          .computeMessageSize(4, numberOfBricksPerSet__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -351,10 +351,10 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName());
     result = result && getDescription()
         .equals(other.getDescription());
-    result = result && (getPieces()
-        == other.getPieces());
-    result = result && internalGetBuildingInstructions().equals(
-        other.internalGetBuildingInstructions());
+    result = result && (getBricks()
+        == other.getBricks());
+    result = result && internalGetNumberOfBricksPerSet().equals(
+        other.internalGetNumberOfBricksPerSet());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -370,12 +370,12 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
-    hash = (37 * hash) + PIECES_FIELD_NUMBER;
+    hash = (37 * hash) + BRICKS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getPieces());
-    if (!internalGetBuildingInstructions().getMap().isEmpty()) {
-      hash = (37 * hash) + BUILDING_INSTRUCTIONS_FIELD_NUMBER;
-      hash = (53 * hash) + internalGetBuildingInstructions().hashCode();
+        getBricks());
+    if (!internalGetNumberOfBricksPerSet().getMap().isEmpty()) {
+      hash = (37 * hash) + NUMBER_OF_BRICKS_PER_SET_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetNumberOfBricksPerSet().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
         int number) {
       switch (number) {
         case 4:
-          return internalGetBuildingInstructions();
+          return internalGetNumberOfBricksPerSet();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -500,7 +500,7 @@ private static final long serialVersionUID = 0L;
         int number) {
       switch (number) {
         case 4:
-          return internalGetMutableBuildingInstructions();
+          return internalGetMutableNumberOfBricksPerSet();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -536,9 +536,9 @@ private static final long serialVersionUID = 0L;
 
       description_ = "";
 
-      pieces_ = 0L;
+      bricks_ = 0L;
 
-      internalGetMutableBuildingInstructions().clear();
+      internalGetMutableNumberOfBricksPerSet().clear();
       return this;
     }
 
@@ -569,9 +569,9 @@ private static final long serialVersionUID = 0L;
       int to_bitField0_ = 0;
       result.name_ = name_;
       result.description_ = description_;
-      result.pieces_ = pieces_;
-      result.buildingInstructions_ = internalGetBuildingInstructions();
-      result.buildingInstructions_.makeImmutable();
+      result.bricks_ = bricks_;
+      result.numberOfBricksPerSet_ = internalGetNumberOfBricksPerSet();
+      result.numberOfBricksPerSet_.makeImmutable();
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -629,11 +629,11 @@ private static final long serialVersionUID = 0L;
         description_ = other.description_;
         onChanged();
       }
-      if (other.getPieces() != 0L) {
-        setPieces(other.getPieces());
+      if (other.getBricks() != 0L) {
+        setBricks(other.getBricks());
       }
-      internalGetMutableBuildingInstructions().mergeFrom(
-          other.internalGetBuildingInstructions());
+      internalGetMutableNumberOfBricksPerSet().mergeFrom(
+          other.internalGetNumberOfBricksPerSet());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -802,121 +802,121 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long pieces_ ;
+    private long bricks_ ;
     /**
-     * <code>int64 pieces = 3;</code>
+     * <code>int64 bricks = 3;</code>
      */
-    public long getPieces() {
-      return pieces_;
+    public long getBricks() {
+      return bricks_;
     }
     /**
-     * <code>int64 pieces = 3;</code>
+     * <code>int64 bricks = 3;</code>
      */
-    public Builder setPieces(long value) {
+    public Builder setBricks(long value) {
       
-      pieces_ = value;
+      bricks_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int64 pieces = 3;</code>
+     * <code>int64 bricks = 3;</code>
      */
-    public Builder clearPieces() {
+    public Builder clearBricks() {
       
-      pieces_ = 0L;
+      bricks_ = 0L;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.Long> buildingInstructions_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
-    internalGetBuildingInstructions() {
-      if (buildingInstructions_ == null) {
+        java.lang.String, java.lang.Integer> numberOfBricksPerSet_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+    internalGetNumberOfBricksPerSet() {
+      if (numberOfBricksPerSet_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            BuildingInstructionsDefaultEntryHolder.defaultEntry);
+            NumberOfBricksPerSetDefaultEntryHolder.defaultEntry);
       }
-      return buildingInstructions_;
+      return numberOfBricksPerSet_;
     }
-    private com.google.protobuf.MapField<java.lang.String, java.lang.Long>
-    internalGetMutableBuildingInstructions() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Integer>
+    internalGetMutableNumberOfBricksPerSet() {
       onChanged();;
-      if (buildingInstructions_ == null) {
-        buildingInstructions_ = com.google.protobuf.MapField.newMapField(
-            BuildingInstructionsDefaultEntryHolder.defaultEntry);
+      if (numberOfBricksPerSet_ == null) {
+        numberOfBricksPerSet_ = com.google.protobuf.MapField.newMapField(
+            NumberOfBricksPerSetDefaultEntryHolder.defaultEntry);
       }
-      if (!buildingInstructions_.isMutable()) {
-        buildingInstructions_ = buildingInstructions_.copy();
+      if (!numberOfBricksPerSet_.isMutable()) {
+        numberOfBricksPerSet_ = numberOfBricksPerSet_.copy();
       }
-      return buildingInstructions_;
+      return numberOfBricksPerSet_;
     }
 
-    public int getBuildingInstructionsCount() {
-      return internalGetBuildingInstructions().getMap().size();
+    public int getNumberOfBricksPerSetCount() {
+      return internalGetNumberOfBricksPerSet().getMap().size();
     }
     /**
-     * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+     * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
      */
 
-    public boolean containsBuildingInstructions(
+    public boolean containsNumberOfBricksPerSet(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetBuildingInstructions().getMap().containsKey(key);
+      return internalGetNumberOfBricksPerSet().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getBuildingInstructionsMap()} instead.
+     * Use {@link #getNumberOfBricksPerSetMap()} instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.Long> getBuildingInstructions() {
-      return getBuildingInstructionsMap();
+    public java.util.Map<java.lang.String, java.lang.Integer> getNumberOfBricksPerSet() {
+      return getNumberOfBricksPerSetMap();
     }
     /**
-     * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+     * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
      */
 
-    public java.util.Map<java.lang.String, java.lang.Long> getBuildingInstructionsMap() {
-      return internalGetBuildingInstructions().getMap();
+    public java.util.Map<java.lang.String, java.lang.Integer> getNumberOfBricksPerSetMap() {
+      return internalGetNumberOfBricksPerSet().getMap();
     }
     /**
-     * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+     * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
      */
 
-    public long getBuildingInstructionsOrDefault(
+    public int getNumberOfBricksPerSetOrDefault(
         java.lang.String key,
-        long defaultValue) {
+        int defaultValue) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.Long> map =
-          internalGetBuildingInstructions().getMap();
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetNumberOfBricksPerSet().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+     * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
      */
 
-    public long getBuildingInstructionsOrThrow(
+    public int getNumberOfBricksPerSetOrThrow(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.Long> map =
-          internalGetBuildingInstructions().getMap();
+      java.util.Map<java.lang.String, java.lang.Integer> map =
+          internalGetNumberOfBricksPerSet().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
       return map.get(key);
     }
 
-    public Builder clearBuildingInstructions() {
-      internalGetMutableBuildingInstructions().getMutableMap()
+    public Builder clearNumberOfBricksPerSet() {
+      internalGetMutableNumberOfBricksPerSet().getMutableMap()
           .clear();
       return this;
     }
     /**
-     * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+     * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
      */
 
-    public Builder removeBuildingInstructions(
+    public Builder removeNumberOfBricksPerSet(
         java.lang.String key) {
       if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableBuildingInstructions().getMutableMap()
+      internalGetMutableNumberOfBricksPerSet().getMutableMap()
           .remove(key);
       return this;
     }
@@ -924,29 +924,29 @@ private static final long serialVersionUID = 0L;
      * Use alternate mutation accessors instead.
      */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.Long>
-    getMutableBuildingInstructions() {
-      return internalGetMutableBuildingInstructions().getMutableMap();
+    public java.util.Map<java.lang.String, java.lang.Integer>
+    getMutableNumberOfBricksPerSet() {
+      return internalGetMutableNumberOfBricksPerSet().getMutableMap();
     }
     /**
-     * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+     * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
      */
-    public Builder putBuildingInstructions(
+    public Builder putNumberOfBricksPerSet(
         java.lang.String key,
-        long value) {
+        int value) {
       if (key == null) { throw new java.lang.NullPointerException(); }
       
-      internalGetMutableBuildingInstructions().getMutableMap()
+      internalGetMutableNumberOfBricksPerSet().getMutableMap()
           .put(key, value);
       return this;
     }
     /**
-     * <code>map&lt;string, int64&gt; building_instructions = 4;</code>
+     * <code>map&lt;string, int32&gt; number_of_bricks_per_set = 4;</code>
      */
 
-    public Builder putAllBuildingInstructions(
-        java.util.Map<java.lang.String, java.lang.Long> values) {
-      internalGetMutableBuildingInstructions().getMutableMap()
+    public Builder putAllNumberOfBricksPerSet(
+        java.util.Map<java.lang.String, java.lang.Integer> values) {
+      internalGetMutableNumberOfBricksPerSet().getMutableMap()
           .putAll(values);
       return this;
     }
