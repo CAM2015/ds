@@ -8,21 +8,12 @@ public interface LegoPieceResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.lego.ProductLine product_line = 1;</code>
+   * <code>string result = 1;</code>
    */
-  int getProductLineValue();
+  java.lang.String getResult();
   /**
-   * <code>.lego.ProductLine product_line = 1;</code>
-   */
-  org.camelia.example.lego.ProductLine getProductLine();
-
-  /**
-   * <code>string belongs_to = 2;</code>
-   */
-  java.lang.String getBelongsTo();
-  /**
-   * <code>string belongs_to = 2;</code>
+   * <code>string result = 1;</code>
    */
   com.google.protobuf.ByteString
-      getBelongsToBytes();
+      getResultBytes();
 }

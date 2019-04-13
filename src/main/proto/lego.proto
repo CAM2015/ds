@@ -29,20 +29,14 @@ message ConstructedLegoToy {
     bool completed = 1;
 }
 
-enum ProductLine {
-    LEGO_CITY = 0;
-    LEGO_STAR_WARS = 1;
-    LEGO_CLASSIC = 2; 
+message ProductLine {
+    string name = 1;   
 }
 
 message LegoPieceRequest {
-    string color = 1;
-    string  material = 2;
-    repeated string shape = 3;
-    map<string, string> brick = 4; 
+   ProductLine product_line = 1;
 }
 
 message LegoPieceResponse {
-    ProductLine product_line = 1;
-    string belongs_to = 2; 
+    string result = 1;
 }

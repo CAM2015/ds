@@ -9,13 +9,14 @@ package lego;
  *
  * @author camel
  */
-
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 import java.util.logging.Logger;
 import org.camelia.example.lego.LegoSet;
 import org.camelia.example.lego.ConstructedLegoToy;
+import org.camelia.example.lego.LegoPieceRequest;
+import org.camelia.example.lego.LegoPieceResponse;
 import org.camelia.example.lego.LegoServiceGrpc;
 import services.JmDNSRegistrationHelper;
 
@@ -61,17 +62,42 @@ public class LegoServer {
         server.blockUntilShutdown();
     }
    
-    private class LegoServiceImpl extends LegoServiceGrpc.LegoServiceImplBase {   
-        //unary
+    private class LegoServiceImpl extends LegoServiceGrpc.LegoServiceImplBase {  
+       
+        //unary stream
         @Override
         public void buildLego(LegoSet request, StreamObserver<ConstructedLegoToy> responseObserver) {    
-          
-            //create the response
-            //String completed = request.getName() + "is done ";      
-            ConstructedLegoToy response = ConstructedLegoToy.newBuilder().setCompleted(true).build();
-            
+            //create the response   
+            ConstructedLegoToy response = ConstructedLegoToy.newBuilder().setCompleted(true).build();          
             responseObserver.onNext(response);
             responseObserver.onCompleted();         
-       }       
+       }    
+        
+        //bi-directional stream
+        @Override
+        public StreamObserver<LegoPieceRequest> legoPiece(final StreamObserver<LegoPieceResponse> responseObserver) {
+            StreamObserver<LegoPieceRequest> requestObserver = new StreamObserver<LegoPieceRequest>(){
+            String result;
+                @Override
+                public void onNext(LegoPieceRequest value) {    
+                    String result = "This LEGO set belongs to  " + value.getProductLine().getName() + " Product Line";
+                    LegoPieceResponse legoPieceResponse = LegoPieceResponse
+                        .newBuilder()
+                        .setResult(result)
+                        .build();
+                    responseObserver.onNext(legoPieceResponse);
+                                
+               }
+                @Override
+                public void onError(Throwable thrwbl) {
+                    //...
+                }
+                @Override
+                public void onCompleted() {                       
+                    responseObserver.onCompleted();
+                }
+            };
+            return requestObserver;
+        }
     }   
 }

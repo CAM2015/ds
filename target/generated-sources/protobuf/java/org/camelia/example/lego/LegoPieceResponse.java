@@ -16,8 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private LegoPieceResponse() {
-    productLine_ = 0;
-    belongsTo_ = "";
+    result_ = "";
   }
 
   @java.lang.Override
@@ -44,16 +43,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
-            int rawValue = input.readEnum();
-
-            productLine_ = rawValue;
-            break;
-          }
-          case 18: {
+          case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            belongsTo_ = s;
+            result_ = s;
             break;
           }
           default: {
@@ -88,51 +81,34 @@ private static final long serialVersionUID = 0L;
             org.camelia.example.lego.LegoPieceResponse.class, org.camelia.example.lego.LegoPieceResponse.Builder.class);
   }
 
-  public static final int PRODUCT_LINE_FIELD_NUMBER = 1;
-  private int productLine_;
+  public static final int RESULT_FIELD_NUMBER = 1;
+  private volatile java.lang.Object result_;
   /**
-   * <code>.lego.ProductLine product_line = 1;</code>
+   * <code>string result = 1;</code>
    */
-  public int getProductLineValue() {
-    return productLine_;
-  }
-  /**
-   * <code>.lego.ProductLine product_line = 1;</code>
-   */
-  public org.camelia.example.lego.ProductLine getProductLine() {
-    @SuppressWarnings("deprecation")
-    org.camelia.example.lego.ProductLine result = org.camelia.example.lego.ProductLine.valueOf(productLine_);
-    return result == null ? org.camelia.example.lego.ProductLine.UNRECOGNIZED : result;
-  }
-
-  public static final int BELONGS_TO_FIELD_NUMBER = 2;
-  private volatile java.lang.Object belongsTo_;
-  /**
-   * <code>string belongs_to = 2;</code>
-   */
-  public java.lang.String getBelongsTo() {
-    java.lang.Object ref = belongsTo_;
+  public java.lang.String getResult() {
+    java.lang.Object ref = result_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      belongsTo_ = s;
+      result_ = s;
       return s;
     }
   }
   /**
-   * <code>string belongs_to = 2;</code>
+   * <code>string result = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getBelongsToBytes() {
-    java.lang.Object ref = belongsTo_;
+      getResultBytes() {
+    java.lang.Object ref = result_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      belongsTo_ = b;
+      result_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -153,11 +129,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (productLine_ != org.camelia.example.lego.ProductLine.LEGO_CITY.getNumber()) {
-      output.writeEnum(1, productLine_);
-    }
-    if (!getBelongsToBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, belongsTo_);
+    if (!getResultBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, result_);
     }
     unknownFields.writeTo(output);
   }
@@ -168,12 +141,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (productLine_ != org.camelia.example.lego.ProductLine.LEGO_CITY.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, productLine_);
-    }
-    if (!getBelongsToBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, belongsTo_);
+    if (!getResultBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, result_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -191,9 +160,8 @@ private static final long serialVersionUID = 0L;
     org.camelia.example.lego.LegoPieceResponse other = (org.camelia.example.lego.LegoPieceResponse) obj;
 
     boolean result = true;
-    result = result && productLine_ == other.productLine_;
-    result = result && getBelongsTo()
-        .equals(other.getBelongsTo());
+    result = result && getResult()
+        .equals(other.getResult());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -205,10 +173,8 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + PRODUCT_LINE_FIELD_NUMBER;
-    hash = (53 * hash) + productLine_;
-    hash = (37 * hash) + BELONGS_TO_FIELD_NUMBER;
-    hash = (53 * hash) + getBelongsTo().hashCode();
+    hash = (37 * hash) + RESULT_FIELD_NUMBER;
+    hash = (53 * hash) + getResult().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -342,9 +308,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      productLine_ = 0;
-
-      belongsTo_ = "";
+      result_ = "";
 
       return this;
     }
@@ -372,8 +336,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.camelia.example.lego.LegoPieceResponse buildPartial() {
       org.camelia.example.lego.LegoPieceResponse result = new org.camelia.example.lego.LegoPieceResponse(this);
-      result.productLine_ = productLine_;
-      result.belongsTo_ = belongsTo_;
+      result.result_ = result_;
       onBuilt();
       return result;
     }
@@ -422,11 +385,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(org.camelia.example.lego.LegoPieceResponse other) {
       if (other == org.camelia.example.lego.LegoPieceResponse.getDefaultInstance()) return this;
-      if (other.productLine_ != 0) {
-        setProductLineValue(other.getProductLineValue());
-      }
-      if (!other.getBelongsTo().isEmpty()) {
-        belongsTo_ = other.belongsTo_;
+      if (!other.getResult().isEmpty()) {
+        result_ = other.result_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -458,116 +418,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int productLine_ = 0;
+    private java.lang.Object result_ = "";
     /**
-     * <code>.lego.ProductLine product_line = 1;</code>
+     * <code>string result = 1;</code>
      */
-    public int getProductLineValue() {
-      return productLine_;
-    }
-    /**
-     * <code>.lego.ProductLine product_line = 1;</code>
-     */
-    public Builder setProductLineValue(int value) {
-      productLine_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.lego.ProductLine product_line = 1;</code>
-     */
-    public org.camelia.example.lego.ProductLine getProductLine() {
-      @SuppressWarnings("deprecation")
-      org.camelia.example.lego.ProductLine result = org.camelia.example.lego.ProductLine.valueOf(productLine_);
-      return result == null ? org.camelia.example.lego.ProductLine.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.lego.ProductLine product_line = 1;</code>
-     */
-    public Builder setProductLine(org.camelia.example.lego.ProductLine value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      
-      productLine_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.lego.ProductLine product_line = 1;</code>
-     */
-    public Builder clearProductLine() {
-      
-      productLine_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object belongsTo_ = "";
-    /**
-     * <code>string belongs_to = 2;</code>
-     */
-    public java.lang.String getBelongsTo() {
-      java.lang.Object ref = belongsTo_;
+    public java.lang.String getResult() {
+      java.lang.Object ref = result_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        belongsTo_ = s;
+        result_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string belongs_to = 2;</code>
+     * <code>string result = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getBelongsToBytes() {
-      java.lang.Object ref = belongsTo_;
+        getResultBytes() {
+      java.lang.Object ref = result_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        belongsTo_ = b;
+        result_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string belongs_to = 2;</code>
+     * <code>string result = 1;</code>
      */
-    public Builder setBelongsTo(
+    public Builder setResult(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      belongsTo_ = value;
+      result_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string belongs_to = 2;</code>
+     * <code>string result = 1;</code>
      */
-    public Builder clearBelongsTo() {
+    public Builder clearResult() {
       
-      belongsTo_ = getDefaultInstance().getBelongsTo();
+      result_ = getDefaultInstance().getResult();
       onChanged();
       return this;
     }
     /**
-     * <code>string belongs_to = 2;</code>
+     * <code>string result = 1;</code>
      */
-    public Builder setBelongsToBytes(
+    public Builder setResultBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      belongsTo_ = value;
+      result_ = value;
       onChanged();
       return this;
     }

@@ -8,75 +8,15 @@ public interface LegoPieceRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string color = 1;</code>
+   * <code>.lego.ProductLine product_line = 1;</code>
    */
-  java.lang.String getColor();
+  boolean hasProductLine();
   /**
-   * <code>string color = 1;</code>
+   * <code>.lego.ProductLine product_line = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getColorBytes();
-
+  org.camelia.example.lego.ProductLine getProductLine();
   /**
-   * <code>string material = 2;</code>
+   * <code>.lego.ProductLine product_line = 1;</code>
    */
-  java.lang.String getMaterial();
-  /**
-   * <code>string material = 2;</code>
-   */
-  com.google.protobuf.ByteString
-      getMaterialBytes();
-
-  /**
-   * <code>repeated string shape = 3;</code>
-   */
-  java.util.List<java.lang.String>
-      getShapeList();
-  /**
-   * <code>repeated string shape = 3;</code>
-   */
-  int getShapeCount();
-  /**
-   * <code>repeated string shape = 3;</code>
-   */
-  java.lang.String getShape(int index);
-  /**
-   * <code>repeated string shape = 3;</code>
-   */
-  com.google.protobuf.ByteString
-      getShapeBytes(int index);
-
-  /**
-   * <code>map&lt;string, string&gt; brick = 4;</code>
-   */
-  int getBrickCount();
-  /**
-   * <code>map&lt;string, string&gt; brick = 4;</code>
-   */
-  boolean containsBrick(
-      java.lang.String key);
-  /**
-   * Use {@link #getBrickMap()} instead.
-   */
-  @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getBrick();
-  /**
-   * <code>map&lt;string, string&gt; brick = 4;</code>
-   */
-  java.util.Map<java.lang.String, java.lang.String>
-  getBrickMap();
-  /**
-   * <code>map&lt;string, string&gt; brick = 4;</code>
-   */
-
-  java.lang.String getBrickOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
-  /**
-   * <code>map&lt;string, string&gt; brick = 4;</code>
-   */
-
-  java.lang.String getBrickOrThrow(
-      java.lang.String key);
+  org.camelia.example.lego.ProductLineOrBuilder getProductLineOrBuilder();
 }

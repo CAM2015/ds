@@ -72,6 +72,7 @@ org\camelia\example\lego\LegoPieceResponseOrBuilder.class
 org\camelia\example\ipad\Artist$Builder.class
 io\grpc\examples\strings\StringsServiceImpl$1.class
 client\jmDNSServiceTracker.class
+org\camelia\example\lego\ProductLine$Builder.class
 serviceui\Printer.class
 org\camelia\example\games\GamesServiceGrpc$GamesServiceMethodDescriptorSupplier.class
 ipad\IPadServer$IPadImpl.class
@@ -94,6 +95,7 @@ org\jpdna\grpchello\HelloResponse$1.class
 org\camelia\example\ipad\IPadServiceGrpc$IPadServiceFileDescriptorSupplier.class
 lego\LegoServer$LegoServiceImpl.class
 client\ServiceDescription.class
+org\camelia\example\lego\ProductLineOrBuilder.class
 org\camelia\example\ipad\ArtistId$Builder.class
 org\camelia\example\lego\LegoServiceGrpc$LegoServiceStub.class
 io\grpc\examples\strings\RedactRequest.class
@@ -129,6 +131,7 @@ org\dominic\example\bed\BedGrpc$BedBaseDescriptorSupplier.class
 org\jpdna\grpchello\HelloWorldClient.class
 clientui\UIConstants.class
 org\dominic\example\recommender\MovieRecommenderGrpc$MovieRecommenderFileDescriptorSupplier.class
+lego\LegoServer$LegoServiceImpl$1.class
 org\dominic\example\recommender\RecommenderServer.class
 org\jpdna\grpchello\GreeterGrpc$1.class
 org\dominic\example\recommender\Movie.class
@@ -148,6 +151,7 @@ org\dominic\example\recommender\MovieRecommenderGrpc$MovieRecommenderBlockingStu
 org\dominic\example\recommender\Recommendations$1.class
 clientui\BedClientGUI$1.class
 client\GRPCBedClient.class
+lego\LegoClient$1.class
 io\grpc\examples\strings\StringsServiceGrpc$StringsServiceBaseDescriptorSupplier.class
 org\camelia\example\lego\LegoPieceResponse$1.class
 org\jpdna\grpchello\HelloResponse$Builder.class
@@ -163,7 +167,6 @@ org\dominic\example\bed\BedGrpc$BedFutureStub.class
 org\dominic\example\recommender\MovieRecommenderGrpc$MethodHandlers.class
 io\grpc\examples\strings\RedactRequest$Builder.class
 io\grpc\examples\strings\StringRequest.class
-org\camelia\example\lego\LegoPieceRequest$BrickDefaultEntryHolder.class
 ipad\IPadClient$1.class
 serviceui\ServiceUI.class
 org\camelia\example\ipad\IPadServiceGrpc$MethodHandlers.class
