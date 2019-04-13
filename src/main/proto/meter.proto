@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package meter;
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "org.camelia.example.meter";
+option java_outer_classname = "MeterProto";
+
+// The service definition.
+service MeterService {
+
+   rpc Funds (FundsAdded) returns (FundsAddedConfirmation) {}
+
+}
+
+enum Status {
+    SUCCESS = 0;
+    FAILED = 1;
+}
+message Account {
+    int32 account_id =1;
+}
+
+message FundsAdded{
+    double amount = 1;
+    string message = 2;
+    int32 from_account_id = 3;
+    int32 to_account_id = 4;
+}
+
+message FundsAddedConfirmation {
+    Status status = 1;
+    string message =2;
+}
