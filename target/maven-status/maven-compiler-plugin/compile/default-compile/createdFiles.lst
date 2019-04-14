@@ -25,6 +25,7 @@ org\camelia\example\lego\LegoSet$NumberOfBricksPerSetDefaultEntryHolder.class
 org\dominic\example\bed\BedGrpc$BedFileDescriptorSupplier.class
 services\BedServer$BedImpl$RemindTask.class
 org\camelia\example\meter\MeterServiceGrpc$MethodHandlers.class
+org\camelia\example\meter\AccountInfo.class
 org\jpdna\grpchello\HelloWorldProto$1.class
 org\dominic\example\recommender\RecommenderProto.class
 org\camelia\example\lego\LegoServiceGrpc.class
@@ -66,6 +67,7 @@ io\grpc\examples\strings\StringResponse.class
 ipad\IPadServer$1.class
 org\camelia\example\lego\ProductLine$1.class
 io\grpc\examples\strings\StringsServiceGrpc$StringsServiceStub.class
+org\camelia\example\meter\AccountInfo$1.class
 org\camelia\example\meter\AccountOrBuilder.class
 org\camelia\example\ipad\ArtistOrBuilder.class
 org\camelia\example\ipad\IPadServiceGrpc$IPadServiceBlockingStub.class
@@ -93,6 +95,7 @@ org\camelia\example\ipad\IPadServiceGrpc.class
 org\camelia\example\meter\Status$1.class
 io\grpc\examples\strings\StringRequestOrBuilder.class
 org\camelia\example\lego\LegoServiceGrpc$LegoServiceFutureStub.class
+org\camelia\example\meter\AccountInfo$Builder.class
 org\dominic\example\recommender\MovieOrBuilder.class
 org\dominic\example\bed\BedGrpc$BedStub.class
 org\dominic\example\recommender\MovieRecommenderGrpc$MovieRecommenderFutureStub.class
@@ -107,6 +110,7 @@ org\camelia\example\lego\LegoServiceGrpc$LegoServiceStub.class
 io\grpc\examples\strings\RedactRequest.class
 org\dominic\example\recommender\RecommenderServer$RecommenderImpl$StreamTask.class
 org\jpdna\grpchello\GreeterGrpc$GreeterBaseDescriptorSupplier.class
+org\camelia\example\meter\AccountInfoOrBuilder.class
 lego\LegoServer.class
 org\camelia\example\meter\MeterServiceGrpc$MeterServiceFutureStub.class
 client\BedClient.class

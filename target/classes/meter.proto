@@ -23,6 +23,12 @@ message Account {
     int32 account_id =1;
 }
 
+message AccountInfo{
+    int32 account_id =1;
+    double amount =2;
+    double balance= 3;
+}
+
 message FundsAdded{
     double amount = 1;
     string message = 2;

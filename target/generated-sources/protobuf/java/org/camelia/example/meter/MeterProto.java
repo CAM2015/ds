@@ -20,6 +20,11 @@ public final class MeterProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_meter_Account_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_meter_AccountInfo_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_meter_AccountInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_meter_FundsAdded_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -40,15 +45,16 @@ public final class MeterProto {
     java.lang.String[] descriptorData = {
       "\n\013meter.proto\022\005meter\032\033google/protobuf/em" +
       "pty.proto\"\035\n\007Account\022\022\n\naccount_id\030\001 \001(\005" +
-      "\"]\n\nFundsAdded\022\016\n\006amount\030\001 \001(\001\022\017\n\007messag" +
-      "e\030\002 \001(\t\022\027\n\017from_account_id\030\003 \001(\005\022\025\n\rto_a" +
-      "ccount_id\030\004 \001(\005\"H\n\026FundsAddedConfirmatio" +
-      "n\022\035\n\006status\030\001 \001(\0162\r.meter.Status\022\017\n\007mess" +
-      "age\030\002 \001(\t*!\n\006Status\022\013\n\007SUCCESS\020\000\022\n\n\006FAIL" +
-      "ED\020\0012K\n\014MeterService\022;\n\005Funds\022\021.meter.Fu" +
-      "ndsAdded\032\035.meter.FundsAddedConfirmation\"" +
-      "\000B)\n\031org.camelia.example.meterB\nMeterPro" +
-      "toP\001b\006proto3"
+      "\"B\n\013AccountInfo\022\022\n\naccount_id\030\001 \001(\005\022\016\n\006a" +
+      "mount\030\002 \001(\001\022\017\n\007balance\030\003 \001(\001\"]\n\nFundsAdd" +
+      "ed\022\016\n\006amount\030\001 \001(\001\022\017\n\007message\030\002 \001(\t\022\027\n\017f" +
+      "rom_account_id\030\003 \001(\005\022\025\n\rto_account_id\030\004 " +
+      "\001(\005\"H\n\026FundsAddedConfirmation\022\035\n\006status\030" +
+      "\001 \001(\0162\r.meter.Status\022\017\n\007message\030\002 \001(\t*!\n" +
+      "\006Status\022\013\n\007SUCCESS\020\000\022\n\n\006FAILED\020\0012K\n\014Mete" +
+      "rService\022;\n\005Funds\022\021.meter.FundsAdded\032\035.m" +
+      "eter.FundsAddedConfirmation\"\000B)\n\031org.cam" +
+      "elia.example.meterB\nMeterProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -69,14 +75,20 @@ public final class MeterProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_meter_Account_descriptor,
         new java.lang.String[] { "AccountId", });
-    internal_static_meter_FundsAdded_descriptor =
+    internal_static_meter_AccountInfo_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_meter_AccountInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_meter_AccountInfo_descriptor,
+        new java.lang.String[] { "AccountId", "Amount", "Balance", });
+    internal_static_meter_FundsAdded_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_meter_FundsAdded_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_meter_FundsAdded_descriptor,
         new java.lang.String[] { "Amount", "Message", "FromAccountId", "ToAccountId", });
     internal_static_meter_FundsAddedConfirmation_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_meter_FundsAddedConfirmation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_meter_FundsAddedConfirmation_descriptor,

@@ -7,6 +7,7 @@ E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\dominic\example\bed\BedStatusOrBuilder.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\grpc-java\org\camelia\example\lego\LegoServiceGrpc.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\io\grpc\examples\strings\StringRequest.java
+E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\meter\AccountInfoOrBuilder.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\ipad\ArtistId.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\ipad\IPadProto.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\src\main\java\services\JmDNSRegistrationHelper.java
@@ -24,6 +25,7 @@ E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\src\main\java\lego\LegoCl
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\dominic\example\recommender\Movie.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\jpdna\grpchello\HelloResponse.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\grpc-java\org\dominic\example\bed\BedGrpc.java
+E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\meter\AccountInfo.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\lego\LegoPieceRequest.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\lego\LegoPieceRequestOrBuilder.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\grpc-java\io\grpc\examples\strings\StringsServiceGrpc.java

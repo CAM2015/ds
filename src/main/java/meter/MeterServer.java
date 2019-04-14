@@ -10,8 +10,11 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 import java.util.HashMap;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.camelia.example.meter.AccountInfo;
 import org.camelia.example.meter.FundsAdded;
 import org.camelia.example.meter.FundsAddedConfirmation;
 import org.camelia.example.meter.MeterServiceGrpc;
@@ -24,7 +27,7 @@ import services.JmDNSRegistrationHelper;
  */
 public class MeterServer {
     private static final Logger logger = Logger.getLogger(Server.class.getSimpleName());
-    private static int port = 50053;
+    private static int port = 50054;
     private Server server;
     
     
@@ -66,13 +69,16 @@ public class MeterServer {
     
     private class MeterServiceImpl extends MeterServiceGrpc.MeterServiceImplBase {  
         // add default amounts to accounts
-	private final double[] accounts = { 0, 100, 40 };
-        private final Map<Integer, Integer> map;
+        double accounts [] = { 0, 100, 40 };
+        // Queue for notifications that need to be sent to corresponding notification client
+       private Map<Integer,Queue<AccountInfo>> map = new HashMap<>();
 
-        private MeterServiceImpl() {
-            this.map = new HashMap<>();
-        }
-        
+       private MeterServiceImpl(){
+           super();
+            map.put(0, new ConcurrentLinkedQueue<>());
+            map.put(1, new ConcurrentLinkedQueue<>());
+            map.put(2, new ConcurrentLinkedQueue<>());
+       }
         @Override
         public void funds(FundsAdded request, StreamObserver<FundsAddedConfirmation> responseObserver) {
             //create the response
@@ -81,12 +87,12 @@ public class MeterServer {
             //banking process
             if (fundsAdded(request.getFromAccountId(), request.getToAccountId(), request.getAmount())){
                 response = FundsAddedConfirmation.newBuilder()
-                        .setMessage("funds added")
+                        .setMessage("FUNDS ADDED")
                         .setStatus(Status.SUCCESS)
                         .build();            
             }else {
                 response = FundsAddedConfirmation.newBuilder()
-                        .setMessage("no fundes added")
+                        .setMessage("NO FUNDS ADDED")
                         .setStatus(Status.FAILED)
                         .build();
             }
@@ -94,15 +100,23 @@ public class MeterServer {
         responseObserver.onCompleted();    
         }
         
-        private boolean fundsAdded(int fromAccount, int toAccount, double ammount) {
-            if (accounts[fromAccount] < ammount) {
-                map.get(fromAccount);
+        private AccountInfo accountInfo(int ac, double amount) {
+            return AccountInfo.newBuilder()
+                    .setAccountId(ac)
+                    .setAmount(amount)
+                    .setBalance(accounts[ac])
+                    .build();
+        }
+        
+        private boolean fundsAdded(int fromAccount, int toAccount, double amount) {
+            if (accounts[fromAccount] < amount) {
+                amount = accounts[fromAccount] - amount;
+                amount = accounts[toAccount] + amount;
+                map.get(fromAccount).add(accountInfo(fromAccount, amount));
+                map.get(toAccount).add(accountInfo(toAccount, amount));
+            }else {
+                map.get(fromAccount).add(accountInfo(fromAccount, amount));
                 return false;
-        }else {
-                accounts[fromAccount] -= ammount;
-                accounts[toAccount] -= ammount;
-                map.get(fromAccount);
-                map.get(toAccount);
             }
             return true;
         }
