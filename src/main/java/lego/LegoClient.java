@@ -35,7 +35,8 @@ import org.camelia.example.lego.ProductLine;
 
 public class LegoClient implements ServiceObserver {
     private static final Logger logger = Logger.getLogger(LegoClient.class.getName());
-    
+    protected LegoClientGUI ui;
+    private final String name;
     private ManagedChannel channel;
     private LegoServiceGrpc.LegoServiceBlockingStub blockingStub;
     private final String interestedService;
@@ -43,8 +44,10 @@ public class LegoClient implements ServiceObserver {
     
     public LegoClient(String host, int port) {
         interestedService = "_lego._udp.local.";
+        name = "AI LEGO BUILDER";
         jmDNSServiceTracker clientManager = jmDNSServiceTracker.getInstance();
         clientManager.register(this);
+      
     }
     
     public void shutdown() throws InterruptedException {
@@ -168,6 +171,6 @@ public class LegoClient implements ServiceObserver {
     
      public static void main(String[] args) throws InterruptedException{
         LegoClient client = new LegoClient("localhost", 50052);
-                 
+              
     }
 }
