@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package meter;
+package org.camelia.example.meter;
 
 import client.ServiceDescription;
 import client.ServiceObserver;
@@ -15,9 +15,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.camelia.example.meter.FundsAdded;
-import org.camelia.example.meter.FundsAddedConfirmation;
-import org.camelia.example.meter.MeterServiceGrpc;
+//import org.camelia.example.meter.FundsAdded;
+//import org.camelia.example.meter.FundsAddedConfirmation;
+//import org.camelia.example.meter.MeterServiceGrpc;
 
 /**
  *
@@ -74,7 +74,7 @@ public class MeterClient implements ServiceObserver{
 
     @Override
     public List<String> serviceInterests() {
-        ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<String>();
         list.add(interestedService);
         return list;
     }
@@ -100,7 +100,7 @@ public class MeterClient implements ServiceObserver{
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
      public static void main(String[] args) throws InterruptedException{
-        MeterClient client = new MeterClient("localhost", 50054);
+        MeterClient client = new MeterClient("localhost", 50024);
                  
     }
 }

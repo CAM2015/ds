@@ -4,7 +4,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ipad;
+package org.camelia.example.ipad;
 
 /**
  *
@@ -28,10 +28,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 import java.util.logging.Logger;
-import org.camelia.example.ipad.ArtistId;
-import org.camelia.example.ipad.IPadServiceGrpc;
-import org.camelia.example.ipad.Song;
-import org.camelia.example.ipad.SongList;
+//import org.camelia.example.ipad.ArtistId;
+//import org.camelia.example.ipad.IPadServiceGrpc;
+//import org.camelia.example.ipad.Song;
+//import org.camelia.example.ipad.SongList;
 
 public class IPadClient implements ServiceObserver{
     private static final Logger logger = Logger.getLogger(IPadClient.class.getName());

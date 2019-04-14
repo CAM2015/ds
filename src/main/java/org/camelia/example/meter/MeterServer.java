@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package meter;
+package org.camelia.example.meter;
 
 import java.util.Map;
 import io.grpc.Server;
@@ -14,11 +14,10 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.camelia.example.meter.AccountInfo;
-import org.camelia.example.meter.FundsAdded;
-import org.camelia.example.meter.FundsAddedConfirmation;
-import org.camelia.example.meter.MeterServiceGrpc;
-import org.camelia.example.meter.Status;
+//import org.camelia.example.meter.FundsAdded;
+//import org.camelia.example.meter.FundsAddedConfirmation;
+//import org.camelia.example.meter.MeterServiceGrpc;
+//import org.camelia.example.meter.Status;
 import services.JmDNSRegistrationHelper;
 
 /**
@@ -27,7 +26,7 @@ import services.JmDNSRegistrationHelper;
  */
 public class MeterServer {
     private static final Logger logger = Logger.getLogger(Server.class.getSimpleName());
-    private static int port = 50054;
+    private static int port = 50024;
     private Server server;
     
     
@@ -71,13 +70,13 @@ public class MeterServer {
         // add default amounts to accounts
         double accounts [] = { 0, 100, 40 };
         // Queue for notifications that need to be sent to corresponding notification client
-       private Map<Integer,Queue<AccountInfo>> map = new HashMap<>();
+       private Map<Integer,Queue<AccountInfo>> map = new HashMap<Integer,Queue<AccountInfo>>();
 
        private MeterServiceImpl(){
            super();
-            map.put(0, new ConcurrentLinkedQueue<>());
-            map.put(1, new ConcurrentLinkedQueue<>());
-            map.put(2, new ConcurrentLinkedQueue<>());
+            map.put(0, new ConcurrentLinkedQueue<AccountInfo>());
+            map.put(1, new ConcurrentLinkedQueue<AccountInfo>());
+            map.put(2, new ConcurrentLinkedQueue<AccountInfo>());
        }
         @Override
         public void funds(FundsAdded request, StreamObserver<FundsAddedConfirmation> responseObserver) {

@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lego;
+package org.camelia.example.lego;
 
 /**
  *
  * @author camel
  */
 
+//import javax.swing.JPanel;
+//import org.camelia.example.lego.LegoClientGUI;
 import client.ServiceDescription;
 import client.ServiceObserver;
 import client.jmDNSServiceTracker;
@@ -24,19 +26,21 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.camelia.example.lego.LegoSet;
-import org.camelia.example.lego.LegoPieceRequest;
-import org.camelia.example.lego.LegoPieceResponse;
-import org.camelia.example.lego.ConstructedLegoToy;
-import org.camelia.example.lego.LegoServiceGrpc;
-import org.camelia.example.lego.ProductLine;
+//import org.camelia.example.lego.LegoSet;
+//import org.camelia.example.lego.LegoPieceRequest;
+//import org.camelia.example.lego.LegoPieceResponse;
+//import org.camelia.example.lego.ConstructedLegoToy;
+//import org.camelia.example.lego.LegoServiceGrpc;
+//import org.camelia.example.lego.ProductLine;
 
 
 
 public class LegoClient implements ServiceObserver {
     private static final Logger logger = Logger.getLogger(LegoClient.class.getName());
+    
     protected LegoClientGUI ui;
     private final String name;
+    
     private ManagedChannel channel;
     private LegoServiceGrpc.LegoServiceBlockingStub blockingStub;
     private final String interestedService;
@@ -47,6 +51,12 @@ public class LegoClient implements ServiceObserver {
         name = "AI LEGO BUILDER";
         jmDNSServiceTracker clientManager = jmDNSServiceTracker.getInstance();
         clientManager.register(this);
+//         java.awt.EventQueue.invokeLater(new Runnable() {
+//             public void run() {
+//                 ui = new LegoClientGUI(LegoClient.this);
+//                 ui.setVisible(true);
+//             }
+//         });
       
     }
     
@@ -56,7 +66,7 @@ public class LegoClient implements ServiceObserver {
 
    String getBuildLego() {
         logger.info("attempting to build lego...");  
-        HashMap<String,Integer>numberOfBricksPerSet = new HashMap<>();
+        HashMap<String,Integer>numberOfBricksPerSet = new HashMap<String,Integer>();
             numberOfBricksPerSet.put("Brickmaster Legends of CHIMA: The Quest for Chi parts", 187);
             numberOfBricksPerSet.put("Ewar's Acro Fighter", 33);
             numberOfBricksPerSet.put("Winzar's Pack Patrol", 38);
@@ -107,8 +117,7 @@ public class LegoClient implements ServiceObserver {
                 "LEGO DUPLO", 
                 "LEGO GHOSTBUSTERS", 
                 "LEGO MINECRAFT")
-                .forEach(
-                    name -> {
+                .forEach( name -> {
                         requestObserver.onNext(LegoPieceRequest.newBuilder()
                             .setProductLine(ProductLine.newBuilder()
                                 .setName(name))
@@ -136,7 +145,7 @@ public class LegoClient implements ServiceObserver {
 
     @Override
     public List<String> serviceInterests() {
-        ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<String>();
         list.add(interestedService);
         return list;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

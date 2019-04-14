@@ -4,7 +4,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ipad;
+package org.camelia.example.ipad;
 
 /**
  *
@@ -18,11 +18,11 @@ import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-import org.camelia.example.ipad.Artist;
-import org.camelia.example.ipad.ArtistId;
-import org.camelia.example.ipad.IPadServiceGrpc;
-import org.camelia.example.ipad.Song;
-import org.camelia.example.ipad.SongList;
+//import org.camelia.example.ipad.Artist;
+//import org.camelia.example.ipad.ArtistId;
+//import org.camelia.example.ipad.IPadServiceGrpc;
+//import org.camelia.example.ipad.Song;
+//import org.camelia.example.ipad.SongList;
 import services.JmDNSRegistrationHelper;
 
 public class IPadServer {
@@ -105,7 +105,7 @@ public class IPadServer {
 		
         public List<Song> pinkSongs(ArtistId request) {
             Artist artist = Artist.newBuilder().setId(request.getId()).setName("Pink").build();
-            songs = new ArrayList<>();
+            songs = new ArrayList<Song>();
             songs.add(Song.newBuilder().setId(1).setName("Stupid Girls").setArtist(artist).build());
             songs.add(Song.newBuilder().setId(2).setName("Try").setArtist(artist).build());
             songs.add(Song.newBuilder().setId(3).setName("So What").setArtist(artist).build());

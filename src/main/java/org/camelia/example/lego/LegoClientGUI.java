@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lego;
+package org.camelia.example.lego;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,7 +13,7 @@ import serviceui.Printer;
  *
  * @author camel
  */
-public class LegoClientGUI extends javax.swing.JFrame {
+public class LegoClientGUI extends javax.swing.JFrame implements Printer{
 
     private LegoClient client;
     

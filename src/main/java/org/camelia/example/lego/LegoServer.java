@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lego;
+package org.camelia.example.lego;
 
 /**
  *
@@ -13,15 +13,15 @@ import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 import java.util.logging.Logger;
-import org.camelia.example.lego.LegoSet;
-import org.camelia.example.lego.ConstructedLegoToy;
-import org.camelia.example.lego.LegoPieceRequest;
-import org.camelia.example.lego.LegoPieceResponse;
-import org.camelia.example.lego.LegoServiceGrpc;
+//import org.camelia.example.lego.LegoSet;
+//import org.camelia.example.lego.ConstructedLegoToy;
+//import org.camelia.example.lego.LegoPieceRequest;
+//import org.camelia.example.lego.LegoPieceResponse;
+//import org.camelia.example.lego.LegoServiceGrpc;
 import services.JmDNSRegistrationHelper;
 
 public class LegoServer {
-    private static final Logger logger = Logger.getLogger(Server.class.getSimpleName());
+    private static final Logger logger = Logger.getLogger(LegoServer.class.getSimpleName());
     private static int port = 50052;
     private Server server;
   
