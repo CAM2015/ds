@@ -76,7 +76,7 @@ public class LegoServer {
         //bi-directional stream
         @Override
         public StreamObserver<LegoPieceRequest> legoPiece(final StreamObserver<LegoPieceResponse> responseObserver) {
-            StreamObserver<LegoPieceRequest> requestObserver = new StreamObserver<LegoPieceRequest>(){
+            return new StreamObserver<LegoPieceRequest>(){
             String result;
                 @Override
                 public void onNext(LegoPieceRequest value) {    
@@ -97,7 +97,7 @@ public class LegoServer {
                     responseObserver.onCompleted();
                 }
             };
-            return requestObserver;
+            //return requestObserver;
         }
     }   
 }

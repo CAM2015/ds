@@ -110,24 +110,33 @@ public class LegoClient implements ServiceObserver {
                 finishLatch.countDown();
             }      
         });
-        Arrays.asList("LEGO_CITY", 
-                "LEGO_STAR_WARS", 
-                "LEGO_CLASSIC", 
-                "LEGO CREATOR", 
-                "LEGO DUPLO", 
-                "LEGO GHOSTBUSTERS", 
-                "LEGO MINECRAFT")
-                .forEach( name -> {
-                        requestObserver.onNext(LegoPieceRequest.newBuilder()
+
+        requestObserver.onNext(LegoPieceRequest.newBuilder()
                             .setProductLine(ProductLine.newBuilder()
-                                .setName(name))
+                                .setName("LEGO_CITY"))
                             .build());
-                        try {
-                            Thread.sleep(100);
-                        } catch (InterruptedException e) {
-                        }
-                    }      
-            );
+        requestObserver.onNext(LegoPieceRequest.newBuilder()
+                            .setProductLine(ProductLine.newBuilder()
+                                .setName("LEGO_STAR_WARS"))
+                            .build());
+        requestObserver.onNext(LegoPieceRequest.newBuilder()
+                            .setProductLine(ProductLine.newBuilder()
+                                .setName("LEGO_CLASSIC"))
+                            .build());
+        requestObserver.onNext(LegoPieceRequest.newBuilder()
+                            .setProductLine(ProductLine.newBuilder()
+                                .setName("LEGO_DUPLO"))
+                            .build());
+        requestObserver.onNext(LegoPieceRequest.newBuilder()
+                            .setProductLine(ProductLine.newBuilder()
+                                .setName("LEGO_GHOSTBUSTERS"))
+                            .build());
+        requestObserver.onNext(LegoPieceRequest.newBuilder()
+                            .setProductLine(ProductLine.newBuilder()
+                                .setName("LEGO_MINECRAFT"))
+                            .build());
+                       
+
         requestObserver.onCompleted();
     
         try {
