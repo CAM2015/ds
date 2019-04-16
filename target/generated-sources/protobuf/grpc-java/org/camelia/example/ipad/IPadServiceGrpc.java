@@ -62,36 +62,36 @@ public final class IPadServiceGrpc {
      return getAllSongsMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<org.camelia.example.ipad.ArtistId,
-      org.camelia.example.ipad.Song> getGetSongsMethod;
+  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      org.camelia.example.ipad.AllArtists> getGetArtistsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "GetSongs",
-      requestType = org.camelia.example.ipad.ArtistId.class,
-      responseType = org.camelia.example.ipad.Song.class,
+      fullMethodName = SERVICE_NAME + '/' + "GetArtists",
+      requestType = com.google.protobuf.Empty.class,
+      responseType = org.camelia.example.ipad.AllArtists.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<org.camelia.example.ipad.ArtistId,
-      org.camelia.example.ipad.Song> getGetSongsMethod() {
-    io.grpc.MethodDescriptor<org.camelia.example.ipad.ArtistId, org.camelia.example.ipad.Song> getGetSongsMethod;
-    if ((getGetSongsMethod = IPadServiceGrpc.getGetSongsMethod) == null) {
+  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      org.camelia.example.ipad.AllArtists> getGetArtistsMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, org.camelia.example.ipad.AllArtists> getGetArtistsMethod;
+    if ((getGetArtistsMethod = IPadServiceGrpc.getGetArtistsMethod) == null) {
       synchronized (IPadServiceGrpc.class) {
-        if ((getGetSongsMethod = IPadServiceGrpc.getGetSongsMethod) == null) {
-          IPadServiceGrpc.getGetSongsMethod = getGetSongsMethod = 
-              io.grpc.MethodDescriptor.<org.camelia.example.ipad.ArtistId, org.camelia.example.ipad.Song>newBuilder()
+        if ((getGetArtistsMethod = IPadServiceGrpc.getGetArtistsMethod) == null) {
+          IPadServiceGrpc.getGetArtistsMethod = getGetArtistsMethod = 
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, org.camelia.example.ipad.AllArtists>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(
-                  "ipad.IPadService", "GetSongs"))
+                  "ipad.IPadService", "GetArtists"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.camelia.example.ipad.ArtistId.getDefaultInstance()))
+                  com.google.protobuf.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  org.camelia.example.ipad.Song.getDefaultInstance()))
-                  .setSchemaDescriptor(new IPadServiceMethodDescriptorSupplier("GetSongs"))
+                  org.camelia.example.ipad.AllArtists.getDefaultInstance()))
+                  .setSchemaDescriptor(new IPadServiceMethodDescriptorSupplier("GetArtists"))
                   .build();
           }
         }
      }
-     return getGetSongsMethod;
+     return getGetArtistsMethod;
   }
 
   /**
@@ -133,9 +133,9 @@ public final class IPadServiceGrpc {
 
     /**
      */
-    public void getSongs(org.camelia.example.ipad.ArtistId request,
-        io.grpc.stub.StreamObserver<org.camelia.example.ipad.Song> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetSongsMethod(), responseObserver);
+    public void getArtists(com.google.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<org.camelia.example.ipad.AllArtists> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetArtistsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -148,12 +148,12 @@ public final class IPadServiceGrpc {
                 org.camelia.example.ipad.SongList>(
                   this, METHODID_ALL_SONGS)))
           .addMethod(
-            getGetSongsMethod(),
+            getGetArtistsMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
-                org.camelia.example.ipad.ArtistId,
-                org.camelia.example.ipad.Song>(
-                  this, METHODID_GET_SONGS)))
+                com.google.protobuf.Empty,
+                org.camelia.example.ipad.AllArtists>(
+                  this, METHODID_GET_ARTISTS)))
           .build();
     }
   }
@@ -189,10 +189,10 @@ public final class IPadServiceGrpc {
 
     /**
      */
-    public void getSongs(org.camelia.example.ipad.ArtistId request,
-        io.grpc.stub.StreamObserver<org.camelia.example.ipad.Song> responseObserver) {
+    public void getArtists(com.google.protobuf.Empty request,
+        io.grpc.stub.StreamObserver<org.camelia.example.ipad.AllArtists> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(getGetSongsMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getGetArtistsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -226,10 +226,10 @@ public final class IPadServiceGrpc {
 
     /**
      */
-    public java.util.Iterator<org.camelia.example.ipad.Song> getSongs(
-        org.camelia.example.ipad.ArtistId request) {
+    public java.util.Iterator<org.camelia.example.ipad.AllArtists> getArtists(
+        com.google.protobuf.Empty request) {
       return blockingServerStreamingCall(
-          getChannel(), getGetSongsMethod(), getCallOptions(), request);
+          getChannel(), getGetArtistsMethod(), getCallOptions(), request);
     }
   }
 
@@ -264,7 +264,7 @@ public final class IPadServiceGrpc {
   }
 
   private static final int METHODID_ALL_SONGS = 0;
-  private static final int METHODID_GET_SONGS = 1;
+  private static final int METHODID_GET_ARTISTS = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -287,9 +287,9 @@ public final class IPadServiceGrpc {
           serviceImpl.allSongs((org.camelia.example.ipad.ArtistId) request,
               (io.grpc.stub.StreamObserver<org.camelia.example.ipad.SongList>) responseObserver);
           break;
-        case METHODID_GET_SONGS:
-          serviceImpl.getSongs((org.camelia.example.ipad.ArtistId) request,
-              (io.grpc.stub.StreamObserver<org.camelia.example.ipad.Song>) responseObserver);
+        case METHODID_GET_ARTISTS:
+          serviceImpl.getArtists((com.google.protobuf.Empty) request,
+              (io.grpc.stub.StreamObserver<org.camelia.example.ipad.AllArtists>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -353,7 +353,7 @@ public final class IPadServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new IPadServiceFileDescriptorSupplier())
               .addMethod(getAllSongsMethod())
-              .addMethod(getGetSongsMethod())
+              .addMethod(getGetArtistsMethod())
               .build();
         }
       }

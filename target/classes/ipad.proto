@@ -14,7 +14,7 @@ service IPadService {
 
      rpc AllSongs (ArtistId) returns (SongList) {}
 
-     rpc GetSongs (ArtistId) returns (stream Song) {}
+     rpc GetArtists (google.protobuf.Empty) returns (stream AllArtists) {}
 }
 
 message ArtistId {
@@ -34,4 +34,14 @@ message Song {
 
 message SongList {
   repeated Song songs= 1;
+}
+
+message Artists {
+   string artist = 1;
+   string genre = 2;
+   string decade =3;
+}
+
+message AllArtists {
+    repeated Artists artists = 1;
 }

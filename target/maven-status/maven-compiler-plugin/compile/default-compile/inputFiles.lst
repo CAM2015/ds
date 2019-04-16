@@ -28,8 +28,11 @@ E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\jpdna\grpchello\HelloResponse.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\grpc-java\org\dominic\example\bed\BedGrpc.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\src\main\java\org\camelia\example\lego\LegoClientGUI.java
+E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\ipad\AllArtists.java
+E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\ipad\Artists.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\meter\AccountInfo.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\lego\LegoPieceRequest.java
+E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\ipad\AllArtistsOrBuilder.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\lego\LegoPieceRequestOrBuilder.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\grpc-java\io\grpc\examples\strings\StringsServiceGrpc.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\src\main\java\org\camelia\example\ipad\IPadServer.java
@@ -64,6 +67,7 @@ E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\io\grpc\examples\strings\StringRequestOrBuilder.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\src\main\java\org\jpdna\grpchello\HelloWorldClient.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\src\main\java\serviceui\ServiceUI.java
+E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\ipad\ArtistsOrBuilder.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\lego\LegoPieceResponseOrBuilder.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\meter\FundsAdded.java
 E:\NCI_4th_Year\Distributed Systems\ds\gRPC-DS-Example\target\generated-sources\protobuf\java\org\camelia\example\ipad\ArtistOrBuilder.java

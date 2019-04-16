@@ -57,7 +57,6 @@ public class LegoClient implements ServiceObserver {
 //                 ui.setVisible(true);
 //             }
 //         });
-      
     }
     
     public void shutdown() throws InterruptedException {
@@ -72,7 +71,7 @@ public class LegoClient implements ServiceObserver {
             numberOfBricksPerSet.put("Winzar's Pack Patrol", 38);
             numberOfBricksPerSet.put("Spider Crawler", 40);
             numberOfBricksPerSet.put("Chi Hyper Laval", 122);
-          
+        logger.info("______________________________________________________________________"); 
         LegoSet legoSet = LegoSet.newBuilder()
                 .setName("CHIMA")
                 .setDescription("This is a list of 'Legends of Chima' lego sets, and the number of bricks per/set")
@@ -91,6 +90,8 @@ public class LegoClient implements ServiceObserver {
         
         LegoServiceGrpc.LegoServiceStub asyncStub = LegoServiceGrpc.newStub(channel);
         CountDownLatch finishLatch = new CountDownLatch(1);   
+        
+        
         StreamObserver<LegoPieceRequest> requestObserver = 
                 asyncStub.legoPiece(new StreamObserver<LegoPieceResponse>(){
             

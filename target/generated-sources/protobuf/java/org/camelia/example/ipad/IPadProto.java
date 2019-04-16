@@ -34,6 +34,16 @@ public final class IPadProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ipad_SongList_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ipad_Artists_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ipad_Artists_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ipad_AllArtists_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ipad_AllArtists_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -48,9 +58,12 @@ public final class IPadProto {
       "t\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\">\n\004Song\022\n\n\002i" +
       "d\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\034\n\006artist\030\003 \001(\0132\014." +
       "ipad.Artist\"%\n\010SongList\022\031\n\005songs\030\001 \003(\0132\n" +
-      ".ipad.Song2g\n\013IPadService\022,\n\010AllSongs\022\016." +
-      "ipad.ArtistId\032\016.ipad.SongList\"\000\022*\n\010GetSo" +
-      "ngs\022\016.ipad.ArtistId\032\n.ipad.Song\"\0000\001B\'\n\030o" +
+      ".ipad.Song\"8\n\007Artists\022\016\n\006artist\030\001 \001(\t\022\r\n" +
+      "\005genre\030\002 \001(\t\022\016\n\006decade\030\003 \001(\t\",\n\nAllArtis" +
+      "ts\022\036\n\007artists\030\001 \003(\0132\r.ipad.Artists2w\n\013IP" +
+      "adService\022,\n\010AllSongs\022\016.ipad.ArtistId\032\016." +
+      "ipad.SongList\"\000\022:\n\nGetArtists\022\026.google.p" +
+      "rotobuf.Empty\032\020.ipad.AllArtists\"\0000\001B\'\n\030o" +
       "rg.camelia.example.ipadB\tIPadProtoP\001b\006pr" +
       "oto3"
     };
@@ -91,6 +104,18 @@ public final class IPadProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ipad_SongList_descriptor,
         new java.lang.String[] { "Songs", });
+    internal_static_ipad_Artists_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_ipad_Artists_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ipad_Artists_descriptor,
+        new java.lang.String[] { "Artist", "Genre", "Decade", });
+    internal_static_ipad_AllArtists_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_ipad_AllArtists_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ipad_AllArtists_descriptor,
+        new java.lang.String[] { "Artists", });
     com.google.protobuf.EmptyProto.getDescriptor();
   }
 

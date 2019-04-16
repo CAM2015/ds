@@ -12,6 +12,7 @@ package org.camelia.example.ipad;
  */
 
 
+import com.google.protobuf.Empty;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
@@ -28,7 +29,7 @@ import services.JmDNSRegistrationHelper;
 public class IPadServer {
     private static final Logger logger = Logger.getLogger(IPadServer.class.getName());
 	  /* The port on which the server should run */
-    private int port = 50052;
+    private int port = 50025;
     private Server server;
 
     private void start() throws Exception {
@@ -78,41 +79,60 @@ public class IPadServer {
     private class IPadImpl extends IPadServiceGrpc.IPadServiceImplBase {
         
         private List<Song> songs;
+        private final List<Artists> artists;
         
+        public IPadImpl() {
+            artists = new ArrayList<Artists>();
+            Artists theCranberries = Artists.newBuilder().setArtist("The Cranberries").setGenre("Rock").setDecade("1990s").build();
+            Artists andreeaBoccelli = Artists.newBuilder().setArtist("Andreea Boccelli").setGenre("Classic Pop").setDecade("1990s").build();          
+            Artists eagles = Artists.newBuilder().setArtist("Eagles").setGenre("Classic Rock").setDecade("1970s").build();
+            Artists shaniaTwain = Artists.newBuilder().setArtist("Shania Twain").setGenre("Country").setDecade("1990s").build();
+            Artists schiller = Artists.newBuilder().setArtist("Schiller").setGenre("Electronic").setDecade("2000s").build();
+            Artists eminem = Artists.newBuilder().setArtist("Eminem").setGenre("Hip Hop").setDecade("2000s").build();
+            Artists arianaGrande = Artists.newBuilder().setArtist("Ariana Grande").setGenre("Pop").setDecade("2010s").build();
+            Artists elvisPrestley = Artists.newBuilder().setArtist("Elvis Presley").setGenre("Rock 'n' Roll").setDecade("1950s").build();
+            Artists lionelRitchie = Artists.newBuilder().setArtist("Lionel Richie").setGenre("Soul").setDecade("1980s").build();
+            Artists noDoubt = Artists.newBuilder().setArtist("No Doubt").setGenre("Classic Pop").setDecade("1980s").build();
+           
+            artists.add(theCranberries);
+            artists.add(andreeaBoccelli);
+            artists.add(eagles);
+            artists.add(shaniaTwain); 
+            artists.add(schiller); 
+            artists.add(eminem); 
+            artists.add(arianaGrande);
+            artists.add(elvisPrestley);
+            artists.add(lionelRitchie);
+            artists.add(noDoubt);
+                          
+        }
         @Override
 		//unary RPC
         public void allSongs(ArtistId request, StreamObserver<SongList> responseObserver) {
-            SongList list = SongList.newBuilder().addAllSongs(pinkSongs(request)).build();
-            responseObserver.onNext(list);
+            SongList response = SongList.newBuilder().addAllSongs(pinkSongs(request)).build();
+            responseObserver.onNext(response);
             responseObserver.onCompleted();
         }
         
         @Override
 		//server streaming RPC
-        public void getSongs(ArtistId request, StreamObserver<Song> responseObserver) {
-            songs = pinkSongs(request);
-                for (Song song: songs) {
-                    responseObserver.onNext(song);
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        responseObserver.onError(e);
-                    }
-                }
-            responseObserver.onCompleted();
+        public void getArtists(Empty request, StreamObserver<AllArtists> responseObserver) {
+            AllArtists response = AllArtists.newBuilder().addAllArtists(artists).build();
+            responseObserver.onNext(response);
+            responseObserver.onCompleted();    
+            }
         }
-
 		
         public List<Song> pinkSongs(ArtistId request) {
             Artist artist = Artist.newBuilder().setId(request.getId()).setName("Pink").build();
-            songs = new ArrayList<Song>();
+            ArrayList<Song> songs = new ArrayList<Song>();
             songs.add(Song.newBuilder().setId(1).setName("Stupid Girls").setArtist(artist).build());
             songs.add(Song.newBuilder().setId(2).setName("Try").setArtist(artist).build());
             songs.add(Song.newBuilder().setId(3).setName("So What").setArtist(artist).build());
             songs.add(Song.newBuilder().setId(3).setName("Just Like Fire").setArtist(artist).build());
             songs.add(Song.newBuilder().setId(3).setName("What About Us").setArtist(artist).build());
         return songs;
-        }
+        }     
     
-    }
 }
+        

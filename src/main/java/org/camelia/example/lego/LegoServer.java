@@ -81,23 +81,22 @@ public class LegoServer {
                 @Override
                 public void onNext(LegoPieceRequest value) {    
                     String result = "This LEGO set belongs to  " + value.getProductLine().getName() + " Product Line";
-                    LegoPieceResponse legoPieceResponse = LegoPieceResponse
-                        .newBuilder()
-                        .setResult(result)
-                        .build();
-                    responseObserver.onNext(legoPieceResponse);
-                                
+                    
                }
                 @Override
                 public void onError(Throwable thrwbl) {
                     //...
                 }
                 @Override
-                public void onCompleted() {                       
+                public void onCompleted() {  
+                    LegoPieceResponse legoPieceResponse = LegoPieceResponse
+                        .newBuilder()
+                        .setResult(result)
+                        .build();
+                    responseObserver.onNext(legoPieceResponse);
                     responseObserver.onCompleted();
                 }
             };
-            //return requestObserver;
         }
     }   
 }
