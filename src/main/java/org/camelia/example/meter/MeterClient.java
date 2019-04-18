@@ -40,8 +40,8 @@ public class MeterClient implements ServiceObserver{
     }
     
     String getFunds(){
-        
-        logger.info("attempting NOT TO ADD funds to the meter..."); 
+        logger.info("**************************************");
+        logger.info("*****Attempting NOT TO ADD funds to the meter...*****"); 
         FundsAdded fundsAddedFirst = FundsAdded.newBuilder()
                 .setAmount(0)
                 .setFromAccountId(1)
@@ -51,7 +51,8 @@ public class MeterClient implements ServiceObserver{
         FundsAddedConfirmation response1 = blockingStub.funds(fundsAddedFirst);
         logger.log(Level.INFO, "Response: " + response1); 
         
-        logger.info("attempting TO ADD funds to the meter..."); 
+        logger.info("**************************************");
+        logger.info("*****Attempting TO ADD funds to the meter...*****"); 
         FundsAdded fundsAddedSecond = FundsAdded.newBuilder()
                 .setAmount(115)
                 .setFromAccountId(1)

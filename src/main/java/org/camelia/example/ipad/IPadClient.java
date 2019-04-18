@@ -42,6 +42,7 @@ public class IPadClient implements ServiceObserver{
         interestedService = "_ipad._udp.local.";
         jmDNSServiceTracker clientManager = jmDNSServiceTracker.getInstance();
         clientManager.register(this);
+        serviceAdded(new ServiceDescription("3.82.212.160", 50025));
     }
     
     public void shutdown() throws InterruptedException {
@@ -49,28 +50,19 @@ public class IPadClient implements ServiceObserver{
     }
 
     public void getAllSongs() {
-    logger.info("call allSongs() method: ");
+   
+    logger.info("***** RETURNING PINK'S SONGS DETAILS*****");  
     ArtistId request = ArtistId.newBuilder().setId(1).build();
     SongList songList = blockingStub.allSongs(request);
         for (Song song : songList.getSongsList()) {
             logger.info(song.toString());
         }
-        logger.info("finished!");
+        logger.info("finished returning Pink's songs details!");
     }
     
-//    public void getAllArtists() {
-//        logger.info("call getArtists() method: ");
-//        Empty request = Empty.newBuilder().build();
-//        Iterator<AllArtists> iterator = blockingStub.getArtists(request);
-//        
-//        while (iterator.hasNext()) {
-//            logger.info(iterator.next().toString());
-//        }
-//        logger.info("finished!");
-//    }
     
     public void getAllArtists() throws InterruptedException {
-        logger.info("______________________________________________________________________");
+        logger.info("**************************************");
         logger.info("***** RETURNING A LIST OF ARTISTS*****");  
         IPadServiceGrpc.IPadServiceStub asyncStub = IPadServiceGrpc.newStub(channel);
         Empty request = Empty.newBuilder().build();
@@ -91,7 +83,7 @@ public class IPadClient implements ServiceObserver{
 
             @Override
             public void onCompleted() {
-                logger.info("finished!");
+                logger.info("finished returning the list of Artists!");
                 latch.countDown();
             }
         };
