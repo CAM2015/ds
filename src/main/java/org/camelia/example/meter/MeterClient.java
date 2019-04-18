@@ -15,9 +15,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-//import org.camelia.example.meter.FundsAdded;
-//import org.camelia.example.meter.FundsAddedConfirmation;
-//import org.camelia.example.meter.MeterServiceGrpc;
+
 
 /**
  *
@@ -34,6 +32,7 @@ public class MeterClient implements ServiceObserver{
         interestedService = "_meter._udp.local.";
         jmDNSServiceTracker clientManager = jmDNSServiceTracker.getInstance();
         clientManager.register(this);
+        serviceAdded(new ServiceDescription("3.82.212.160", 50024));
     }
     
     public void shutdown() throws InterruptedException {
@@ -41,29 +40,29 @@ public class MeterClient implements ServiceObserver{
     }
     
     String getFunds(){
-        logger.info("attempting TO ADD funds to the meter..."); 
-        FundsAdded fundsAdded = FundsAdded.newBuilder()
-                .setAmount(115)
-                .setFromAccountId(1)
-                .setToAccountId(2)
-                .build();
-       logger.log (Level.INFO, "FUNDS: " + fundsAdded);  
-        FundsAddedConfirmation response = blockingStub.funds(fundsAdded);
-        logger.log(Level.INFO, "Response: " + response);     
         
-        
-        logger.info("attempting TO ADD funds to the meter..."); 
-        FundsAdded fundsAdded1 = FundsAdded.newBuilder()
+        logger.info("attempting NOT TO ADD funds to the meter..."); 
+        FundsAdded fundsAddedFirst = FundsAdded.newBuilder()
                 .setAmount(0)
                 .setFromAccountId(1)
                 .setToAccountId(2)
                 .build();
-       logger.log (Level.INFO,  "FUNDS: " + fundsAdded1);  
-        FundsAddedConfirmation response2 = blockingStub.funds(fundsAdded1);
+        logger.log (Level.INFO,  "FUNDS: " + fundsAddedFirst);  
+        FundsAddedConfirmation response1 = blockingStub.funds(fundsAddedFirst);
+        logger.log(Level.INFO, "Response: " + response1); 
+        
+        logger.info("attempting TO ADD funds to the meter..."); 
+        FundsAdded fundsAddedSecond = FundsAdded.newBuilder()
+                .setAmount(115)
+                .setFromAccountId(1)
+                .setToAccountId(2)
+                .build();
+        logger.log (Level.INFO, "FUNDS: " + fundsAddedSecond);  
+        FundsAddedConfirmation response2 = blockingStub.funds(fundsAddedSecond);
         logger.log(Level.INFO, "Response: " + response2);     
+        
       
-        return response.toString();
-       
+        return response1.toString();   
     }
     
     
@@ -86,8 +85,7 @@ public class MeterClient implements ServiceObserver{
                 .build();
         blockingStub = MeterServiceGrpc.newBlockingStub(channel);
         System.out.println("I got the information about the service, now i can call the service");
-        getFunds();
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        getFunds();     
     }
 
     @Override

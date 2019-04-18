@@ -78,7 +78,6 @@ public class IPadServer {
 
     private class IPadImpl extends IPadServiceGrpc.IPadServiceImplBase {
         
-        private List<Song> songs;
         private final List<Artists> artists;
         
         public IPadImpl() {
@@ -116,13 +115,20 @@ public class IPadServer {
         
         @Override
 		//server streaming RPC
-        public void getArtists(Empty request, StreamObserver<AllArtists> responseObserver) {
-            AllArtists response = AllArtists.newBuilder().addAllArtists(artists).build();
-            responseObserver.onNext(response);
-            responseObserver.onCompleted();    
+        public void getArtists(Empty request, StreamObserver<AllArtists> responseObserver) {     
+            try {
+            for (int i = 1; i <= 10; i++) {             
+                AllArtists response = AllArtists.newBuilder().addAllArtists(artists).build();
+                responseObserver.onNext(response);
+                Thread.sleep(1000);
+            }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+             } finally {
+                responseObserver.onCompleted();
             }
         }
-		
+          
         public List<Song> pinkSongs(ArtistId request) {
             Artist artist = Artist.newBuilder().setId(request.getId()).setName("Pink").build();
             ArrayList<Song> songs = new ArrayList<Song>();
@@ -132,7 +138,10 @@ public class IPadServer {
             songs.add(Song.newBuilder().setId(3).setName("Just Like Fire").setArtist(artist).build());
             songs.add(Song.newBuilder().setId(3).setName("What About Us").setArtist(artist).build());
         return songs;
-        }     
+        } 
+        }
+		
+        
     
 }
         

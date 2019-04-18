@@ -124,7 +124,7 @@ public class IPadClient implements ServiceObserver{
         blockingStub = IPadServiceGrpc.newBlockingStub(channel);
         System.out.println("I got the information about the service, now i can call the service");
         try {
-            //getAllSongs();
+            getAllSongs();
             getAllArtists();
         } catch (InterruptedException ex) {
             Logger.getLogger(IPadClient.class.getName()).log(Level.SEVERE, null, ex);
