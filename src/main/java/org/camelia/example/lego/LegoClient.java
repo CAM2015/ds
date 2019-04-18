@@ -38,7 +38,7 @@ import java.util.logging.Logger;
 public class LegoClient implements ServiceObserver {
     private static final Logger logger = Logger.getLogger(LegoClient.class.getName());
     
-    protected LegoClientGUI ui;
+    //protected LegoClientGUI ui;
     private final String name;
     
     private ManagedChannel channel;
@@ -57,6 +57,8 @@ public class LegoClient implements ServiceObserver {
 //                 ui.setVisible(true);
 //             }
 //         });
+        serviceAdded(new ServiceDescription("3.82.212.160", 50052));
+
     }
     
     public void shutdown() throws InterruptedException {
@@ -64,14 +66,15 @@ public class LegoClient implements ServiceObserver {
     }
 
    String getBuildLego() {
-        logger.info("attempting to build lego...");  
+        logger.info("**************************************");
+        logger.info("*****Attempting to build lego...*****");  
         HashMap<String,Integer>numberOfBricksPerSet = new HashMap<String,Integer>();
             numberOfBricksPerSet.put("Brickmaster Legends of CHIMA: The Quest for Chi parts", 187);
             numberOfBricksPerSet.put("Ewar's Acro Fighter", 33);
             numberOfBricksPerSet.put("Winzar's Pack Patrol", 38);
             numberOfBricksPerSet.put("Spider Crawler", 40);
             numberOfBricksPerSet.put("Chi Hyper Laval", 122);
-        logger.info("______________________________________________________________________"); 
+          
         LegoSet legoSet = LegoSet.newBuilder()
                 .setName("CHIMA")
                 .setDescription("This is a list of 'Legends of Chima' lego sets, and the number of bricks per/set")
@@ -90,8 +93,6 @@ public class LegoClient implements ServiceObserver {
         
         LegoServiceGrpc.LegoServiceStub asyncStub = LegoServiceGrpc.newStub(channel);
         CountDownLatch finishLatch = new CountDownLatch(1);   
-        
-        
         StreamObserver<LegoPieceRequest> requestObserver = 
                 asyncStub.legoPiece(new StreamObserver<LegoPieceResponse>(){
             
@@ -158,7 +159,7 @@ public class LegoClient implements ServiceObserver {
         ArrayList<String> list = new ArrayList<String>();
         list.add(interestedService);
         return list;
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
@@ -171,7 +172,7 @@ public class LegoClient implements ServiceObserver {
             System.out.println("I got the information about the service, now i can call the service");
             getBuildLego();
             getLegoPiece();
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            
         } catch (InterruptedException ex) {
             Logger.getLogger(LegoClient.class.getName()).log(Level.SEVERE, null, ex);
         }

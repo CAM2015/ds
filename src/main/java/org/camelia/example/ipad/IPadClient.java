@@ -50,7 +50,7 @@ public class IPadClient implements ServiceObserver{
     }
 
     public void getAllSongs() {
-   
+    logger.info("**************************************");
     logger.info("***** RETURNING PINK'S SONGS DETAILS*****");  
     ArtistId request = ArtistId.newBuilder().setId(1).build();
     SongList songList = blockingStub.allSongs(request);
