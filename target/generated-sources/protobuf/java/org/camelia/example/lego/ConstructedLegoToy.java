@@ -48,6 +48,19 @@ private static final long serialVersionUID = 0L;
             completed_ = input.readBool();
             break;
           }
+          case 18: {
+            org.camelia.example.lego.LegoSet.Builder subBuilder = null;
+            if (legoSet_ != null) {
+              subBuilder = legoSet_.toBuilder();
+            }
+            legoSet_ = input.readMessage(org.camelia.example.lego.LegoSet.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(legoSet_);
+              legoSet_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -89,6 +102,27 @@ private static final long serialVersionUID = 0L;
     return completed_;
   }
 
+  public static final int LEGO_SET_FIELD_NUMBER = 2;
+  private org.camelia.example.lego.LegoSet legoSet_;
+  /**
+   * <code>.lego.LegoSet lego_set = 2;</code>
+   */
+  public boolean hasLegoSet() {
+    return legoSet_ != null;
+  }
+  /**
+   * <code>.lego.LegoSet lego_set = 2;</code>
+   */
+  public org.camelia.example.lego.LegoSet getLegoSet() {
+    return legoSet_ == null ? org.camelia.example.lego.LegoSet.getDefaultInstance() : legoSet_;
+  }
+  /**
+   * <code>.lego.LegoSet lego_set = 2;</code>
+   */
+  public org.camelia.example.lego.LegoSetOrBuilder getLegoSetOrBuilder() {
+    return getLegoSet();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -106,6 +140,9 @@ private static final long serialVersionUID = 0L;
     if (completed_ != false) {
       output.writeBool(1, completed_);
     }
+    if (legoSet_ != null) {
+      output.writeMessage(2, getLegoSet());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -118,6 +155,10 @@ private static final long serialVersionUID = 0L;
     if (completed_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(1, completed_);
+    }
+    if (legoSet_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getLegoSet());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -137,6 +178,11 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getCompleted()
         == other.getCompleted());
+    result = result && (hasLegoSet() == other.hasLegoSet());
+    if (hasLegoSet()) {
+      result = result && getLegoSet()
+          .equals(other.getLegoSet());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -151,6 +197,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + COMPLETED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getCompleted());
+    if (hasLegoSet()) {
+      hash = (37 * hash) + LEGO_SET_FIELD_NUMBER;
+      hash = (53 * hash) + getLegoSet().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -286,6 +336,12 @@ private static final long serialVersionUID = 0L;
       super.clear();
       completed_ = false;
 
+      if (legoSetBuilder_ == null) {
+        legoSet_ = null;
+      } else {
+        legoSet_ = null;
+        legoSetBuilder_ = null;
+      }
       return this;
     }
 
@@ -313,6 +369,11 @@ private static final long serialVersionUID = 0L;
     public org.camelia.example.lego.ConstructedLegoToy buildPartial() {
       org.camelia.example.lego.ConstructedLegoToy result = new org.camelia.example.lego.ConstructedLegoToy(this);
       result.completed_ = completed_;
+      if (legoSetBuilder_ == null) {
+        result.legoSet_ = legoSet_;
+      } else {
+        result.legoSet_ = legoSetBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -363,6 +424,9 @@ private static final long serialVersionUID = 0L;
       if (other == org.camelia.example.lego.ConstructedLegoToy.getDefaultInstance()) return this;
       if (other.getCompleted() != false) {
         setCompleted(other.getCompleted());
+      }
+      if (other.hasLegoSet()) {
+        mergeLegoSet(other.getLegoSet());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -417,6 +481,123 @@ private static final long serialVersionUID = 0L;
       completed_ = false;
       onChanged();
       return this;
+    }
+
+    private org.camelia.example.lego.LegoSet legoSet_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.camelia.example.lego.LegoSet, org.camelia.example.lego.LegoSet.Builder, org.camelia.example.lego.LegoSetOrBuilder> legoSetBuilder_;
+    /**
+     * <code>.lego.LegoSet lego_set = 2;</code>
+     */
+    public boolean hasLegoSet() {
+      return legoSetBuilder_ != null || legoSet_ != null;
+    }
+    /**
+     * <code>.lego.LegoSet lego_set = 2;</code>
+     */
+    public org.camelia.example.lego.LegoSet getLegoSet() {
+      if (legoSetBuilder_ == null) {
+        return legoSet_ == null ? org.camelia.example.lego.LegoSet.getDefaultInstance() : legoSet_;
+      } else {
+        return legoSetBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.lego.LegoSet lego_set = 2;</code>
+     */
+    public Builder setLegoSet(org.camelia.example.lego.LegoSet value) {
+      if (legoSetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        legoSet_ = value;
+        onChanged();
+      } else {
+        legoSetBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.lego.LegoSet lego_set = 2;</code>
+     */
+    public Builder setLegoSet(
+        org.camelia.example.lego.LegoSet.Builder builderForValue) {
+      if (legoSetBuilder_ == null) {
+        legoSet_ = builderForValue.build();
+        onChanged();
+      } else {
+        legoSetBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.lego.LegoSet lego_set = 2;</code>
+     */
+    public Builder mergeLegoSet(org.camelia.example.lego.LegoSet value) {
+      if (legoSetBuilder_ == null) {
+        if (legoSet_ != null) {
+          legoSet_ =
+            org.camelia.example.lego.LegoSet.newBuilder(legoSet_).mergeFrom(value).buildPartial();
+        } else {
+          legoSet_ = value;
+        }
+        onChanged();
+      } else {
+        legoSetBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.lego.LegoSet lego_set = 2;</code>
+     */
+    public Builder clearLegoSet() {
+      if (legoSetBuilder_ == null) {
+        legoSet_ = null;
+        onChanged();
+      } else {
+        legoSet_ = null;
+        legoSetBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.lego.LegoSet lego_set = 2;</code>
+     */
+    public org.camelia.example.lego.LegoSet.Builder getLegoSetBuilder() {
+      
+      onChanged();
+      return getLegoSetFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.lego.LegoSet lego_set = 2;</code>
+     */
+    public org.camelia.example.lego.LegoSetOrBuilder getLegoSetOrBuilder() {
+      if (legoSetBuilder_ != null) {
+        return legoSetBuilder_.getMessageOrBuilder();
+      } else {
+        return legoSet_ == null ?
+            org.camelia.example.lego.LegoSet.getDefaultInstance() : legoSet_;
+      }
+    }
+    /**
+     * <code>.lego.LegoSet lego_set = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        org.camelia.example.lego.LegoSet, org.camelia.example.lego.LegoSet.Builder, org.camelia.example.lego.LegoSetOrBuilder> 
+        getLegoSetFieldBuilder() {
+      if (legoSetBuilder_ == null) {
+        legoSetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            org.camelia.example.lego.LegoSet, org.camelia.example.lego.LegoSet.Builder, org.camelia.example.lego.LegoSetOrBuilder>(
+                getLegoSet(),
+                getParentForChildren(),
+                isClean());
+        legoSet_ = null;
+      }
+      return legoSetBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

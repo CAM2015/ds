@@ -62,8 +62,9 @@ public class MeterClient implements ServiceObserver{
         FundsAddedConfirmation response2 = blockingStub.funds(fundsAddedSecond);
         logger.log(Level.INFO, "Response: " + response2);     
         
-      
+        logger.info("finished adding the funds");
         return response1.toString();   
+        
     }
     
     
@@ -86,7 +87,7 @@ public class MeterClient implements ServiceObserver{
                 .build();
         blockingStub = MeterServiceGrpc.newBlockingStub(channel);
         System.out.println("I got the information about the service, now i can call the service");
-        getFunds();     
+        getFunds();       
     }
 
     @Override

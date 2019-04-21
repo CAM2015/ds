@@ -175,6 +175,7 @@ org\camelia\example\meter\MeterServiceGrpc$MeterServiceStub.class
 client\GRPCBedClient.class
 org\camelia\example\meter\FundsAdded$Builder.class
 io\grpc\examples\strings\StringsServiceGrpc$StringsServiceBaseDescriptorSupplier.class
+org\camelia\example\lego\LegoClient$2.class
 org\camelia\example\lego\LegoPieceResponse$1.class
 org\jpdna\grpchello\HelloResponse$Builder.class
 org\camelia\example\lego\LegoServiceGrpc$LegoServiceBaseDescriptorSupplier.class
@@ -227,6 +228,7 @@ org\jpdna\grpchello\HelloRequestOrBuilder.class
 org\dominic\example\bed\BedGrpc$BedMethodDescriptorSupplier.class
 org\jpdna\grpchello\HelloResponseOrBuilder.class
 org\camelia\example\ipad\AllArtistsOrBuilder.class
+org\camelia\example\lego\LegoClient$3.class
 org\camelia\example\lego\LegoSet$1.class
 org\dominic\example\recommender\Profile$1.class
 org\camelia\example\ipad\SongListOrBuilder.class

@@ -27,6 +27,7 @@ message LegoSet {
 
 message ConstructedLegoToy {
     bool completed = 1;
+    LegoSet lego_set = 2;
 }
 
 message ProductLine {

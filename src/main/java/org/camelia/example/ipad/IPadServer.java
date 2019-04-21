@@ -19,11 +19,6 @@ import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-//import org.camelia.example.ipad.Artist;
-//import org.camelia.example.ipad.ArtistId;
-//import org.camelia.example.ipad.IPadServiceGrpc;
-//import org.camelia.example.ipad.Song;
-//import org.camelia.example.ipad.SongList;
 import services.JmDNSRegistrationHelper;
 
 public class IPadServer {
@@ -105,7 +100,7 @@ public class IPadServer {
             artists.add(noDoubt);
                           
         }
-        @Override
+        @Override 
 		//unary RPC
         public void allSongs(ArtistId request, StreamObserver<SongList> responseObserver) {
             SongList response = SongList.newBuilder().addAllSongs(pinkSongs(request)).build();

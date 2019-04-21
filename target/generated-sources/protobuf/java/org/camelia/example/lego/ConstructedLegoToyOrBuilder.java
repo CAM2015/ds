@@ -11,4 +11,17 @@ public interface ConstructedLegoToyOrBuilder extends
    * <code>bool completed = 1;</code>
    */
   boolean getCompleted();
+
+  /**
+   * <code>.lego.LegoSet lego_set = 2;</code>
+   */
+  boolean hasLegoSet();
+  /**
+   * <code>.lego.LegoSet lego_set = 2;</code>
+   */
+  org.camelia.example.lego.LegoSet getLegoSet();
+  /**
+   * <code>.lego.LegoSet lego_set = 2;</code>
+   */
+  org.camelia.example.lego.LegoSetOrBuilder getLegoSetOrBuilder();
 }

@@ -12,13 +12,11 @@ package org.camelia.example.lego;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
+import java.util.HashMap;
 import java.util.logging.Logger;
-//import org.camelia.example.lego.LegoSet;
-//import org.camelia.example.lego.ConstructedLegoToy;
-//import org.camelia.example.lego.LegoPieceRequest;
-//import org.camelia.example.lego.LegoPieceResponse;
-//import org.camelia.example.lego.LegoServiceGrpc;
 import services.JmDNSRegistrationHelper;
+import serviceui.Printer;
+import serviceui.ServiceUI;
 
 public class LegoServer {
     private static final Logger logger = Logger.getLogger(LegoServer.class.getSimpleName());
@@ -63,14 +61,35 @@ public class LegoServer {
     }
    
     private class LegoServiceImpl extends LegoServiceGrpc.LegoServiceImplBase {  
-       
+        private Printer ui;
+        
+        public LegoServiceImpl(){
+            String name = "Camelia's";
+            String serviceType = "_lego._udp.local.";
+            ui = new ServiceUI(name + serviceType);
+        }
         //unary stream
         @Override
         public void buildLego(LegoSet request, StreamObserver<ConstructedLegoToy> responseObserver) {    
-            //create the response   
-            ConstructedLegoToy response = ConstructedLegoToy.newBuilder().setCompleted(true).build();          
+            //create the response  
+            HashMap<String,Integer>numberOfBricksPerSet = new HashMap<String,Integer>();
+                    numberOfBricksPerSet.put("Brickmaster Legends of CHIMA: The Quest for Chi parts", 187);
+                    numberOfBricksPerSet.put("Ewar's Acro Fighter", 33);
+                    numberOfBricksPerSet.put("Winzar's Pack Patrol", 38);
+                    numberOfBricksPerSet.put("Spider Crawler", 40);
+                    numberOfBricksPerSet.put("Chi Hyper Laval", 122);
+
+                    request = LegoSet.newBuilder()
+                        .setName("CHIMA")
+                        .setDescription("This is a list of 'Legends of Chima' lego sets, and the number of bricks per/set")
+                        .putAllNumberOfBricksPerSet(numberOfBricksPerSet)
+                        .build();
+            
+            ConstructedLegoToy response = ConstructedLegoToy.newBuilder().setLegoSet(request).setCompleted(true).build(); 
+            ui.append("***BUILD LEGO***" + response.toString());
             responseObserver.onNext(response);
-            responseObserver.onCompleted();         
+            responseObserver.onCompleted();   
+           
        }    
         
         //bi-directional stream
@@ -85,8 +104,9 @@ public class LegoServer {
                         .newBuilder()
                         .setResult(result)
                         .build();
-                    responseObserver.onNext(legoPieceResponse);
-                                
+                   //
+                    ui.append(legoPieceResponse.toString());
+                    responseObserver.onNext(legoPieceResponse);                               
                }
                 @Override
                 public void onError(Throwable thrwbl) {
@@ -96,8 +116,7 @@ public class LegoServer {
                 public void onCompleted() {                       
                     responseObserver.onCompleted();
                 }
-            };
-          
+            };          
         }
     }   
 }

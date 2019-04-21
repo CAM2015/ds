@@ -35,84 +35,67 @@ public class LegoClientGUI extends javax.swing.JFrame implements Printer{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         getBricks = new javax.swing.JButton();
-        buildLego1 = new javax.swing.JButton();
+        buildLego = new javax.swing.JButton();
         title = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\camel\\Downloads\\lego-frame-3774083_640.png")); // NOI18N
+        jLabel2.setText("jLabel2");
 
-        getBricks.setBackground(new java.awt.Color(255, 51, 0));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 255, 204));
+        setBounds(new java.awt.Rectangle(300, 300, 300, 300));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        getBricks.setBackground(new java.awt.Color(0, 0, 0));
         getBricks.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        getBricks.setForeground(new java.awt.Color(0, 153, 51));
         getBricks.setText("Lego Sets");
-        getBricks.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getBricks.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 153, 255), new java.awt.Color(204, 153, 255), new java.awt.Color(204, 204, 255), new java.awt.Color(204, 204, 255))));
         getBricks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 getBricksActionPerformed(evt);
             }
         });
+        getContentPane().add(getBricks, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 110, 40));
 
-        buildLego1.setBackground(new java.awt.Color(255, 204, 102));
-        buildLego1.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        buildLego1.setText("Build Lego");
-        buildLego1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        buildLego1.addActionListener(new java.awt.event.ActionListener() {
+        buildLego.setBackground(new java.awt.Color(0, 0, 0));
+        buildLego.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        buildLego.setForeground(new java.awt.Color(255, 0, 51));
+        buildLego.setText("Build Lego");
+        buildLego.setBorder(javax.swing.BorderFactory.createCompoundBorder(null, new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(153, 153, 153), new java.awt.Color(153, 153, 153), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204))));
+        buildLego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buildLego1ActionPerformed(evt);
+                buildLegoActionPerformed(evt);
             }
         });
+        getContentPane().add(buildLego, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 110, 40));
 
         title.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         title.setText("AI Lego Builder");
+        getContentPane().add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 190, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 0, 153));
         jLabel1.setText("*every parent's dream*");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(getBricks, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buildLego1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(100, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(title)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addGap(27, 27, 27)
-                .addComponent(buildLego1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(getBricks, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(95, Short.MAX_VALUE))
-        );
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void getBricksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getBricksActionPerformed
-         client.getBuildLego();
-    }//GEN-LAST:event_getBricksActionPerformed
-
-    private void buildLego1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buildLego1ActionPerformed
         try {
             client.getLegoPiece();
         } catch (InterruptedException ex) {
             Logger.getLogger(LegoClientGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_buildLego1ActionPerformed
+    }//GEN-LAST:event_getBricksActionPerformed
+
+    private void buildLegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buildLegoActionPerformed
+        client.getBuildLego();
+    }//GEN-LAST:event_buildLegoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,9 +146,10 @@ public class LegoClientGUI extends javax.swing.JFrame implements Printer{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buildLego1;
+    private javax.swing.JButton buildLego;
     private javax.swing.JButton getBricks;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,10 +14,6 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-//import org.camelia.example.meter.FundsAdded;
-//import org.camelia.example.meter.FundsAddedConfirmation;
-//import org.camelia.example.meter.MeterServiceGrpc;
-//import org.camelia.example.meter.Status;
 import services.JmDNSRegistrationHelper;
 
 /**
@@ -119,7 +115,7 @@ public class MeterServer {
             }
             return true;
         }
-   }
+    }
 }
 
        

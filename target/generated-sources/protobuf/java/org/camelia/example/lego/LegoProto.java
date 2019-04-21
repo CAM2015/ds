@@ -59,16 +59,16 @@ public final class LegoProto {
       "_of_bricks_per_set\030\004 \003(\0132\'.lego.LegoSet." +
       "NumberOfBricksPerSetEntry\032;\n\031NumberOfBri" +
       "cksPerSetEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
-      "(\005:\0028\001\"\'\n\022ConstructedLegoToy\022\021\n\tcomplete" +
-      "d\030\001 \001(\010\"\033\n\013ProductLine\022\014\n\004name\030\001 \001(\t\";\n\020" +
-      "LegoPieceRequest\022\'\n\014product_line\030\001 \001(\0132\021" +
-      ".lego.ProductLine\"#\n\021LegoPieceResponse\022\016" +
-      "\n\006result\030\001 \001(\t2\211\001\n\013LegoService\0226\n\tbuildL" +
-      "ego\022\r.lego.LegoSet\032\030.lego.ConstructedLeg" +
-      "oToy\"\000\022B\n\tlegoPiece\022\026.lego.LegoPieceRequ" +
-      "est\032\027.lego.LegoPieceResponse\"\000(\0010\001B\'\n\030or" +
-      "g.camelia.example.legoB\tLegoProtoP\001b\006pro" +
-      "to3"
+      "(\005:\0028\001\"H\n\022ConstructedLegoToy\022\021\n\tcomplete" +
+      "d\030\001 \001(\010\022\037\n\010lego_set\030\002 \001(\0132\r.lego.LegoSet" +
+      "\"\033\n\013ProductLine\022\014\n\004name\030\001 \001(\t\";\n\020LegoPie" +
+      "ceRequest\022\'\n\014product_line\030\001 \001(\0132\021.lego.P" +
+      "roductLine\"#\n\021LegoPieceResponse\022\016\n\006resul" +
+      "t\030\001 \001(\t2\211\001\n\013LegoService\0226\n\tbuildLego\022\r.l" +
+      "ego.LegoSet\032\030.lego.ConstructedLegoToy\"\000\022" +
+      "B\n\tlegoPiece\022\026.lego.LegoPieceRequest\032\027.l" +
+      "ego.LegoPieceResponse\"\000(\0010\001B\'\n\030org.camel" +
+      "ia.example.legoB\tLegoProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -100,7 +100,7 @@ public final class LegoProto {
     internal_static_lego_ConstructedLegoToy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_lego_ConstructedLegoToy_descriptor,
-        new java.lang.String[] { "Completed", });
+        new java.lang.String[] { "Completed", "LegoSet", });
     internal_static_lego_ProductLine_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_lego_ProductLine_fieldAccessorTable = new

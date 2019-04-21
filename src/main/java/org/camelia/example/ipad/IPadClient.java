@@ -15,16 +15,12 @@ import client.ServiceDescription;
 import client.ServiceObserver;
 import client.jmDNSServiceTracker;
 import com.google.protobuf.Empty;
-
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import io.grpc.Status;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -42,7 +38,7 @@ public class IPadClient implements ServiceObserver{
         interestedService = "_ipad._udp.local.";
         jmDNSServiceTracker clientManager = jmDNSServiceTracker.getInstance();
         clientManager.register(this);
-        serviceAdded(new ServiceDescription("3.82.212.160", 50025));
+        serviceAdded(new ServiceDescription("52.91.20.79", 50025));
     }
     
     public void shutdown() throws InterruptedException {
@@ -64,6 +60,7 @@ public class IPadClient implements ServiceObserver{
     public void getAllArtists() throws InterruptedException {
         logger.info("**************************************");
         logger.info("***** RETURNING A LIST OF ARTISTS*****");  
+        
         IPadServiceGrpc.IPadServiceStub asyncStub = IPadServiceGrpc.newStub(channel);
         Empty request = Empty.newBuilder().build();
         final CountDownLatch latch = new CountDownLatch(1);
@@ -74,13 +71,11 @@ public class IPadClient implements ServiceObserver{
             @Override
             public void onNext(AllArtists response) {
                 logger.log(Level.INFO, "get artist: {0}", response);
-            }
-            
+            }            
             @Override
             public void onError(Throwable t) {
                 latch.countDown();
             }
-
             @Override
             public void onCompleted() {
                 logger.info("finished returning the list of Artists!");
@@ -88,8 +83,7 @@ public class IPadClient implements ServiceObserver{
             }
         };
         asyncStub.getArtists(request, responseObserver);
-
-          try {
+        try {
             latch.await(3, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
         }
@@ -120,8 +114,7 @@ public class IPadClient implements ServiceObserver{
             getAllArtists();
         } catch (InterruptedException ex) {
             Logger.getLogger(IPadClient.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        }       
     }
 
     @Override
